@@ -1,5 +1,5 @@
 # A personal webpage for Laverne Wyatt
-The client needs 
+The client wants a webpage and a blog for her personal brand and podcast episodes.
 
 ## Tech
 This project will be a combination of CMS, Static Site Generator, DAM and a deployment service.
