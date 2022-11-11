@@ -14,27 +14,27 @@ The project is separated into the following main categories:
 - [x] Create readme, todo and log files
  
 ## 2. Data model / structured content
-- [] Agree on a data model
-- [] Create the data model in Sanity
+- [ ] Agree on a data model
+- [ ] Create the data model in Sanity
 
 ## 2. Content
-- [] Teach the client how to use Sanity
+- [ ] Teach the client how to use Sanity
 
 ## 3. Design
-- [] Create design
-- [] Implement design
+- [ ] Create design
+- [ ] Implement design
 
 ## 4. Tech
 
 ### Sanity CMS
-- [] Install Sanity
+- [ ] Install Sanity
 
 ### Static Site Generator
-- [] Install Gatsby or Next
+- [ ] Install Gatsby or Next
 
 ### DAM
-- [] Connect Cloudinary?
-- [] Connect Unsplash
+- [ ] Connect Cloudinary?
+- [ ] Connect Unsplash
 
 ### Deployment
-- [] Connect to Netlify
+- [ ] Connect to Netlify
