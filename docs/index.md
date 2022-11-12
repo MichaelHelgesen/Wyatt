@@ -1,4 +1,4 @@
 hello
 
 
-Read more about this here [test](/test)
+Read more about this here [test](/wyatt/test)
