@@ -94,17 +94,31 @@ export default {
             ]
         },
         {
-            title: 'Title, descending',
+            title: 'Title, ascending',
             name: 'titleAsc',
             by: [
                 { field: 'title', direction: 'asc' }
             ]
         },
         {
-            title: 'Title, ascending',
+            title: 'Title, descending',
             name: 'titleDesc',
             by: [
                 { field: 'title', direction: 'desc' }
+            ]
+        },
+        {
+            title: 'Length, descending',
+            name: 'lengthDesc',
+            by: [
+                { field: 'length', direction: 'desc' }
+            ]
+        },
+        {
+            title: 'Length, ascending',
+            name: 'lengthAsc',
+            by: [
+                { field: 'length', direction: 'asc' }
             ]
         },
     ],

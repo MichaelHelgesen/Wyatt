@@ -16,5 +16,6 @@
 - Got an error in Sanity tsconfig.json file. It found no .ts-files, so I added an empty one on root, and the error went away.
 - Sendt the first draft for a data model to the Client.
 - Created Github pages for the project [wyatt](https://michaelhelgesen.github.io/wyatt/) to be able to share progress and information with the client.
+- Created Blogpost and Podcast schema in Sanity
 
 
