@@ -50,6 +50,7 @@ The project is separated into the following main categories:
         - [x] Short intro
         - [x] Publish date
         - [ ] Client (refer to client list?)
+        - [ ] Person responsible (refer to person list?)
         - [x] Rich text
         - [x] Hero-Image
         - [ ] Images for carousel or gallery (folder on cloudinary?)
@@ -57,17 +58,17 @@ The project is separated into the following main categories:
         - [x] Title
         - [x] Date
         - [x] Place
-        - [ ] Client
+        - [ ] Client (refer to client list)
         - [x] Short intro
         - [x] Rich text
         - [x] Hero-image
         - [ ] Images for carousel or gallery
-    - [ ] Quotes (unnecesary? Fetch from Client? No quote when no client?)
+    ~~ - [ ] Quotes
         - [ ] From company
         - [ ] From person
         - [ ] Person in question
         - [ ] Work in question
-        - [ ] Quote 
+        - [ ] Quote ~~
     - [ ] Clients
         - [x] Company
         - [x] Contact person
