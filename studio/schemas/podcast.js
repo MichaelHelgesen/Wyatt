@@ -1,7 +1,7 @@
 
 export default {
-    title: 'Blogpost',
-    name: 'post',
+    title: 'Podcast',
+    name: 'podcast',
     type: 'document',
     fields: [
         {
@@ -24,22 +24,28 @@ export default {
             }
         },
         {
-            description: "Publishdate",
+            description: "Publish date",
             title: 'Date',
             name: 'date',
             type: 'datetime',
             validation: Rule => Rule.required()
         },
         {
-            description: "A short, one to two lines, introduction for the blog list.",
+            description: "The length of the podcast in minutes e.g. 34.30",
+            title: 'Length',
+            name: 'length',
+            type: 'number',
+        },
+        {
+            description: "A short, one to two lines, introduction for the podcast list.",
             name: 'description',
             rows: 3,
-            title: 'Short description for blog list',
+            title: 'Short description for podcast list',
             type: 'text',
             validation: Rule => Rule.required()
         },
         {
-            description: "An image for the blog preview",
+            description: "An image for the podcast preview",
             type: 'blogPostImage',
             name: "image"
         },
@@ -51,7 +57,7 @@ export default {
             type: 'text',
         },
         {
-            description: "The main text of the post. Keep paragraphs short, and put the most important content first.",
+            description: "The main text of the podcast post. Keep paragraphs short, and put the most important content first.",
             title: 'Main text',
             name: 'content',
             type: 'array',
@@ -74,28 +80,28 @@ export default {
     ],
     orderings: [
         {
-            title: 'Dato, nyeste',
+            title: 'Date, newest',
             name: 'releaseDateDesc',
             by: [
                 { field: 'date', direction: 'desc' }
             ]
         },
         {
-            title: 'Dato, eldste',
+            title: 'Date, oldest',
             name: 'releaseDateAsc',
             by: [
                 { field: 'date', direction: 'asc' }
             ]
         },
         {
-            title: 'Tittel, synkende',
+            title: 'Title, descending',
             name: 'titleAsc',
             by: [
                 { field: 'title', direction: 'asc' }
             ]
         },
         {
-            title: 'Tittel, stigende',
+            title: 'Title, ascending',
             name: 'titleDesc',
             by: [
                 { field: 'title', direction: 'desc' }

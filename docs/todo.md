@@ -18,22 +18,25 @@ The project is separated into the following main categories:
 ## 2. Data model / structured content
 - [x] Agree on a data model
 - [ ] Create the data model in Sanity
-    - [ ] Blogpost
-        - [ ] Title
-        - [ ] Slug (to separate title from url-address if needed)
-        - [ ] Short intro
-        - [ ] Hero-image
-        - [ ] Rich text
-        - [ ] Publishdate
-    - [ ] Podcast
-        - [ ] Title
-        - [ ] Slug
-        - [ ] Hero-image
-        - [ ] Rich text
-        - [ ] Publish date
+    - [x] Blogpost
+        - [x] Title
+        - [x] Slug (to separate title from url-address if needed)
+        - [x] Short intro
+        - [x] Hero-image
+        - [x] Rich text
+        - [x] Publishdate
+    - [x] Podcast
+        - [x] Title
+        - [x] Slug
+        - [x] Hero-image
+        - [x] Rich text
+        - [x] Publish date
+        - [ ] Guests? (Connects to Persons)
     - [ ] Persons
         - [ ] Name
         - [ ] Title
+        - [ ] Email
+        - [ ] Webpage 
         - [ ] Rich text
         - [ ] Work
         - [ ] References
