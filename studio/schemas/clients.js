@@ -25,11 +25,37 @@ export default {
             }
         },
         {
+            description: "URL to company webpage",
+            title: 'Webpage',
+            name: 'webpage',
+            type: 'url',
+            validation: Rule => Rule.uri(
+                {
+                    scheme: ['http', 'https']
+                }
+            )
+        },
+        {
             description: "Name of person in company",
             title: 'Person',
             name: 'person',
             type: 'string',
         },
+        {
+            description: "Email address to contact person",
+            title: 'E-mail',
+            name: 'email',
+            type: 'string',
+            validation: (Rule) =>
+                Rule.regex(
+                    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
+                    {
+                        name: "email", // Error message is "Does not match email-pattern"
+                        invert: false, // Boolean to allow any value that does NOT match pattern
+                    }
+                ),
+        },
+
         {
             description: "A short, one to two lines, of what was delivered for the preview.",
             name: 'description',
