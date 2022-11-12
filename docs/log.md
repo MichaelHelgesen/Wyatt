@@ -1,5 +1,4 @@
-**MENU:** [Home](/wyatt/index) - [**TODO**](/wyatt/todo) - [Worklog](/wyatt/worklog)
-
+**MENU:** [Home](/wyatt/index) - [TODO](/wyatt/todo) - [**Worklog**](/wyatt/log)
 
 # Worklog
 
