@@ -2,8 +2,10 @@
 
 # Worklog
 ## 12.11.22
+- Fields in schemas created:
+    ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668278216/Wyatt/2022-11-12_kl._19.34.36_xuomz4.png)
 - Schemas created:
-- ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668278215/Wyatt/2022-11-12_kl._19.32.58_plbajp.png)
+     ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668278215/Wyatt/2022-11-12_kl._19.32.58_plbajp.png)
 - Created Blogpost schema in Sanity
 - Created Podcast schema in Sanity
 - Created Person schema in Sanity
