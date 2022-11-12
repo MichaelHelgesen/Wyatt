@@ -54,14 +54,13 @@ The project is separated into the following main categories:
         - [x] Hero-Image
         - [ ] Images for carousel or gallery (folder on cloudinary?)
     - [ ] Events
-        - [ ] Title
-        - [ ] Publish date
-        - [ ] Date
-        - [ ] Place
+        - [x] Title
+        - [x] Date
+        - [x] Place
         - [ ] Client
-        - [ ] Short intro
-        - [ ] Rich text
-        - [ ] Hero-image
+        - [x] Short intro
+        - [x] Rich text
+        - [x] Hero-image
         - [ ] Images for carousel or gallery
     - [ ] Quotes (unnecesary?)
         - [ ] From company
