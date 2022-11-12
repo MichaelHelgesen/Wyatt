@@ -1,6 +1,5 @@
 **MENU:** [Home](/wyatt/index) - [**TODO**](/wyatt/todo) - [Worklog](/wyatt/log)
 
-
 # TODOs for Wyatt webpage
 Project management for the Wyatt webpage containing a blog for her personal brand and podcast episodes.
 
@@ -17,7 +16,7 @@ The project is separated into the following main categories:
 - [x] Create readme, todo and log files
  
 ## 2. Data model / structured content
-- [ ] Agree on a data model
+- [x] Agree on a data model
 - [ ] Create the data model in Sanity
     - [ ] Blogpost
         - [ ] Title
