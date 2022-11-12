@@ -1,3 +1,6 @@
+**MENU:** [Home](/wyatt/index) - [**TODO**](/wyatt/todo) - [Worklog](/wyatt/worklog)
+
+
 # Worklog
 
 ## 10.11.22
