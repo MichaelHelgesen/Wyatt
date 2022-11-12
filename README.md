@@ -9,9 +9,11 @@ I want to use Sanity CMS for building the data model and managing the content.
 It´s flexible, and easy to use for both the developer and the content creator.
 
 ### Static Site Generator
+Gatsby was chosen, since I got a lot of errors trying to install Next, and I want to move on with the project.
+
 I´m not sure if I want to use Gatsby or Next in this project. I have experience with Gatsby, but would also want to learn Next.
 
-I´ll read up on the cros and cons.
+I´ll read up on the pros and cons.
 
 ### DAM
 The website will contain podcasts, images and illustrations.
