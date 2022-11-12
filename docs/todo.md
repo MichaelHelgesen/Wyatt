@@ -69,10 +69,11 @@ The project is separated into the following main categories:
         - [ ] Work in question
         - [ ] Quote 
     - [ ] Clients
-        - [ ] Company
-        - [ ] Contact person
-        - [ ] Quote
-        - [ ] Person responsible (refer to person list)
+        - [x] Company
+        - [x] Contact person
+        - [x] Quote
+        - [x] Company URL
+        - [x] Contact persons email
         - [ ] Work (refer to work and event list)
         - [ ] Logo, or is that to difficult?
     - [ ] Pages
