@@ -61,14 +61,14 @@ The project is separated into the following main categories:
         - [ ] About
         - [ ] Etc
 
-## 2. Content
+## 3. Content
 - [ ] Teach the client how to use Sanity
 
-## 3. Design
+## 4. Design
 - [ ] Create design
 - [ ] Implement design
 
-## 4. Tech
+## 5. Tech
 
 ### Sanity CMS
 - [ ] Install Sanity
