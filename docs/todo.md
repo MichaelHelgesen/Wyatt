@@ -33,14 +33,15 @@ The project is separated into the following main categories:
         - [x] Publish date
         - [ ] Guests? (Connects to Persons)
     - [ ] Persons
-        - [ ] Name
-        - [ ] Title
+        - [x] Name
+        - [x] Title
         - [ ] Email
         - [ ] Webpage 
-        - [ ] Rich text
-        - [ ] Work
-        - [ ] References
-        - [ ] Image
+        - [x] Rich text
+        - [ ] Work (refer to work and event lists)
+        - [ ] Quotes (refer to quotes)
+        - [x] Image
+        - [x] Pronoun
         - [ ] Other?
     - [ ] Work
         - [ ] Title
@@ -60,6 +61,12 @@ The project is separated into the following main categories:
         - [ ] Rich text
         - [ ] Hero-image
         - [ ] Images for carousel or gallery
+    - [ ] Quotes
+        - [ ] From company
+        - [ ] From person
+        - [ ] Person in question
+        - [ ] Work in question
+        - [ ] Quote 
     - [ ] Pages
         - [ ] Home
         - [ ] Blog
