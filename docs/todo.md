@@ -62,7 +62,7 @@ The project is separated into the following main categories:
         - [x] Rich text
         - [x] Hero-image
         - [ ] Images for carousel or gallery
-    - [ ] Quotes (unnecesary?)
+    - [ ] Quotes (unnecesary? Fetch from Client? No quote when no client?)
         - [ ] From company
         - [ ] From person
         - [ ] Person in question
@@ -74,6 +74,7 @@ The project is separated into the following main categories:
         - [ ] Quote
         - [ ] Person responsible (refer to person list)
         - [ ] Work (refer to work and event list)
+        - [ ] Logo, or is that to difficult?
     - [ ] Pages
         - [ ] Home
         - [ ] Blog
