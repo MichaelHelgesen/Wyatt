@@ -31,7 +31,7 @@ The project is separated into the following main categories:
         - [x] Hero-image
         - [x] Rich text
         - [x] Publish date
-        - [ ] Guests? (Connects to Persons)
+        - [ ] Guests? (refer to person list)
     - [ ] Persons
         - [x] Name
         - [x] Title
@@ -42,15 +42,17 @@ The project is separated into the following main categories:
         - [ ] Quotes (refer to quotes)
         - [x] Image
         - [x] Pronoun
+        - [x] Title
+        - [x] Workplace
         - [ ] Other?
     - [ ] Work
-        - [ ] Title
-        - [ ] Short intro
-        - [ ] Publish date
-        - [ ] Client
-        - [ ] Rich text
-        - [ ] Hero-Image
-        - [ ] Images for carousel or gallery
+        - [x] Title
+        - [x] Short intro
+        - [x] Publish date
+        - [ ] Client (refer to client list?)
+        - [x] Rich text
+        - [x] Hero-Image
+        - [ ] Images for carousel or gallery (folder on cloudinary?)
     - [ ] Events
         - [ ] Title
         - [ ] Publish date
@@ -61,12 +63,18 @@ The project is separated into the following main categories:
         - [ ] Rich text
         - [ ] Hero-image
         - [ ] Images for carousel or gallery
-    - [ ] Quotes
+    - [ ] Quotes (unnecesary?)
         - [ ] From company
         - [ ] From person
         - [ ] Person in question
         - [ ] Work in question
         - [ ] Quote 
+    - [ ] Clients
+        - [ ] Company
+        - [ ] Contact person
+        - [ ] Quote
+        - [ ] Person responsible (refer to person list)
+        - [ ] Work (refer to work and event list)
     - [ ] Pages
         - [ ] Home
         - [ ] Blog
@@ -88,6 +96,7 @@ The project is separated into the following main categories:
 ### Static Site Generator
 - [ ] Install Gatsby or Next
     - [ ] Gatsby
+    - [ ] Connect Sanity to Gatsby
 
 ### DAM
 - [ ] Connect Cloudinary?

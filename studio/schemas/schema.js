@@ -7,6 +7,7 @@ import blogPostImage from './blogPostImage'
 import podcast from './podcast'
 import person from './person'
 import posts from "./posts"
+import work from './work'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -18,6 +19,7 @@ export default createSchema({
     blogPostImage,
     person,
     podcast,
-    posts
+    posts,
+    work
   ]),
 })

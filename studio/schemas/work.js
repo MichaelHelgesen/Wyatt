@@ -1,7 +1,7 @@
 
 export default {
-    title: 'Blogpost',
-    name: 'post',
+    title: 'Work',
+    name: 'work',
     type: 'document',
     fields: [
         {
@@ -24,22 +24,22 @@ export default {
             }
         },
         {
-            description: "Publishdate",
-            title: 'Date',
+            description: "Date when the worj was done",
+            title: 'Date for when delivered',
             name: 'date',
             type: 'datetime',
             validation: Rule => Rule.required()
         },
         {
-            description: "A short, one to two lines, introduction for the blog list.",
+            description: "A short, one to two lines, introduction for the work list.",
             name: 'description',
             rows: 3,
-            title: 'Short description for blog list',
+            title: 'Short description for work list',
             type: 'text',
             validation: Rule => Rule.required()
         },
         {
-            description: "An image for the blog preview",
+            description: "A preview image",
             type: 'blogPostImage',
             name: "image"
         },

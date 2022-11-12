@@ -22,6 +22,16 @@ export default {
             type: 'string',
         },
         {
+            title: 'Title',
+            name: 'title',
+            type: 'string',
+        },
+        {
+            title: 'Workplace',
+            name: 'workplace',
+            type: 'string',
+        },
+        {
             title: 'E-mail',
             name: 'email',
             type: 'string',
