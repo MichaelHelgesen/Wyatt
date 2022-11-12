@@ -22,6 +22,29 @@ export default {
             type: 'string',
         },
         {
+            title: 'E-mail',
+            name: 'email',
+            type: 'string',
+            validation: (Rule) =>
+                Rule.regex(
+                    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
+                    {
+                        name: "email", // Error message is "Does not match email-pattern"
+                        invert: false, // Boolean to allow any value that does NOT match pattern
+                    }
+                ),
+        },
+        {
+            title: 'Webpage',
+            name: 'webpage',
+            type: 'url',
+            validation: Rule => Rule.uri(
+                {
+                    scheme: ['http', 'https']
+                }
+            )
+        },
+        {
             description: "A portrait image of the person in question",
             type: 'blogPostImage',
             name: "image"
@@ -43,7 +66,7 @@ export default {
                         { title: "H5", value: "h5" },
                         { title: "H6", value: "h6" },
                         { title: "Quote", value: "blockquote" },
-                      ],
+                    ],
                 },
             ]
         }
