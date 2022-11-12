@@ -35,8 +35,8 @@ The project is separated into the following main categories:
     - [ ] Persons
         - [x] Name
         - [x] Title
-        - [ ] Email
-        - [ ] Webpage 
+        - [x] Email
+        - [x] Webpage 
         - [x] Rich text
         - [ ] Work (refer to work and event lists)
         - [ ] Quotes (refer to quotes)
