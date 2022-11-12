@@ -1,4 +1,4 @@
-**MENU:** [**Home**](/wyatt/index) - [TODO](/wyatt/todo) - [Worklog](/wyatt/worklog)
+**MENU:** [**Home**](/wyatt/index) - [TODO](/wyatt/todo) - [Worklog](/wyatt/log)
 
 # A personal webpage for Laverne Wyatt
 The client wants a webpage and a blog for her personal brand and podcast episodes.
