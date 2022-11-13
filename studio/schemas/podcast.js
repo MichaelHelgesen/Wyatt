@@ -45,6 +45,31 @@ export default {
             validation: Rule => Rule.required()
         },
         {
+            description: "A list of guests, from the Person category",
+            name: "guests",
+            title: "Guest(s)",
+            type: "array",
+            of: [
+                {
+                    type: 'reference',
+                    to: [{ type: 'person' }],
+                    options: {
+                        filter: ({ parent }) => {
+                            const existingPerson = parent.map(item => {
+                                return item._ref;
+                            })
+                            return {
+                                filter: "_id in $ref == false",
+                                params: {
+                                    ref: existingPerson
+                                }
+                            }
+                        }
+                    }
+                },
+            ],
+        },
+        {
             description: "An image for the podcast preview",
             type: 'blogPostImage',
             name: "image"

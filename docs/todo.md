@@ -31,15 +31,15 @@ The project is separated into the following main categories:
         - [x] Hero-image
         - [x] Rich text
         - [x] Publish date
-        - [ ] Guests? (refer to person list)
+        - [x] Guests? (refer to person list)
     - [ ] Persons
         - [x] Name
         - [x] Title
         - [x] Email
         - [x] Webpage 
         - [x] Rich text
-        - [ ] Work (refer to work and event lists)
-        - [ ] Quotes (refer to quotes)
+        - [ ] Work (refer to work and event lists)?
+        - [ ] Quotes (refer to quotes)?
         - [x] Image
         - [x] Pronoun
         - [x] Title
@@ -49,7 +49,7 @@ The project is separated into the following main categories:
         - [x] Title
         - [x] Short intro
         - [x] Publish date
-        - [ ] Client (refer to client list?)
+        - [x] Client (refer to client list?)
         - [ ] Person responsible (refer to person list?)
         - [x] Rich text
         - [x] Hero-Image
@@ -58,7 +58,7 @@ The project is separated into the following main categories:
         - [x] Title
         - [x] Date
         - [x] Place
-        - [ ] Client (refer to client list)
+        - [x] Client (refer to client list)
         - [x] Short intro
         - [x] Rich text
         - [x] Hero-image
@@ -82,6 +82,16 @@ The project is separated into the following main categories:
         - [ ] Blog
         - [ ] About
         - [ ] Etc
+    - [ ] Rich text modules
+        - [ ] Work
+        - [ ] Client
+        - [ ] Podcast
+        - [ ] Event
+        - [ ] Person
+        - [ ] Other blog?
+        - [ ] Gallery from work?
+        - [ ] Gallery from event?
+        - [ ] YouTube-embed
 
 ## 3. Content
 - [ ] Teach the client how to use Sanity
@@ -93,12 +103,15 @@ The project is separated into the following main categories:
 ## 5. Tech
 
 ### Sanity CMS
-- [ ] Install Sanity
+- [x] Install Sanity
 
 ### Static Site Generator
-- [ ] Install Gatsby or Next
-    - [ ] Gatsby
-    - [ ] Connect Sanity to Gatsby
+- [x] Install Gatsby or Next
+    - [x] Gatsby
+    - [ ] Set up Gatsby cloud for real time editing?
+    - [x] Connect Sanity to Gatsby
+        - [x] Install gatsby-source-sanity
+
 
 ### DAM
 - [ ] Connect Cloudinary?

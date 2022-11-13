@@ -8,6 +8,7 @@
 - Added social media links to person schema.
 - This is what the raw data from Sanity looks like in the API, that gets imported to the webpage.
     ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668336317/Wyatt/Skjermbilde_2022-11-13_kl._11.34.55_nks2vs.png)
+- Error below is because gatsby-source-sanity is not compatible with Gatsby 5.
 - Added gatsby-source-sanity package, but it failed. Had to add "--legacy-peer-deps" to make it work.
 - Deployed the GraphQL API that will connect to the webpage.
 - Deployed the Sanity Studio.

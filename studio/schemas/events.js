@@ -37,6 +37,31 @@ export default {
             validation: Rule => Rule.required()
         },
         {
+            description: "Choose a client from the Client category or create a new one",
+            name: "client",
+            title: "Client(s)",
+            type: "array",
+            of: [
+                {
+                    type: 'reference',
+                    to: [{ type: 'client' }],
+                    options: {
+                        filter: ({ parent }) => {
+                            const existingClient = parent.map(item => {
+                                return item._ref;
+                            })
+                            return {
+                                filter: "_id in $ref == false",
+                                params: {
+                                    ref: existingClient
+                                }
+                            }
+                        }
+                    }
+                },
+            ],
+        },
+        {
             description: "A short, one to two lines, introduction for the event list.",
             name: 'description',
             rows: 3,
