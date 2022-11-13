@@ -1,9 +1,10 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
+import Menu from "../components/menu"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+//import Layout from "../components/layout"
+//import Seo from "../components/seo"
 
 export const pageQuery = graphql`
   query {
@@ -23,21 +24,20 @@ export const pageQuery = graphql`
 const BlogIndex = ({ data, location }) => {
   //const siteTitle = data.site.siteMetadata?.title || `Title`
   //const posts = data.allMarkdownRemark.nodes
-  console.log(data);
   return (
-    <Layout location={location} title={"Laverne Wyatt"}>
+    <div>
       <div>
+        <Menu />
+        <Layout>
         {data.allSanityPost.edges.map((post, index) => (
 
-            <div>
-                <small >{post.node.read}</small>
-                <small >{post.node.author}</small>
-                <h2 >{post.node.title}</h2>
+            <div style={{ backgroundColor: '#ddd', padding: '20px', margin: '20px 0' }}>
+                <h2 style={{margin: "0"}}>{post.node.title}</h2>
             </div>
         ))}
-        <div></div>
+        </Layout>
     </div>
-    </Layout>
+    </div>
   )
 }
 
@@ -48,6 +48,6 @@ export default BlogIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="All posts" />
+//export const Head = () => <Seo title="All posts" />
 
 

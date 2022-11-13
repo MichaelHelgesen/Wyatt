@@ -2,6 +2,9 @@
 
 # Worklog
 ## 13.11.22
+- Pages are working on the webpage.
+    ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668372706/Wyatt/Skjermbilde_2022-11-13_kl._21.51.34_eg0xhv.png)
+- Created page generating from page category in gatsby-node.js.
 - Added page schema.
 - Sanity and Gatsby is connected!
     ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668362203/Wyatt/Skjermbilde_2022-11-13_kl._18.56.12_y2wfcw.png)

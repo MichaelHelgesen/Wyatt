@@ -1,125 +1,64 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
- */
+/* exports.onCreateNode = ({ node }) => {
+    console.log(`Node created of type "${node.internal.type}"`)
+} */
 
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
-
-// Define the template for blog post
-const blogPost = path.resolve(`./src/templates/blog-post.js`)
-
-/**
- * @type {import('gatsby').GatsbyNode['createPages']}
- */
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
-
-  // Get all markdown blog posts sorted by date
-  const result = await graphql(`
-    {
-      allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
-        nodes {
-          id
-          fields {
-            slug
+exports.createPages = async function ({ actions, graphql }) {
+  const { createPage } = actions;
+  const { data } = await graphql(`
+  query {
+      pages: allSanityPage {
+          edges {
+            node {
+              id
+              internal {
+                  type
+                }
+              slug {
+                current
+              }
+              title
+            }
           }
         }
-      }
-    }
-  `)
-
-  if (result.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      result.errors
-    )
-    return
   }
+`)
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const createPages = (node) => {
+      let id = node.id
+      const createSlug = (string) => string.toLowerCase().replace(/\s+/g, '-').slice(0, 200);
+      let titleAsSlug
+      let slug
+      let pathUrl
+      let pageComponent
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
+      if (node.internal.type === "SanityCategories") {
+          titleAsSlug = createSlug(node.categoryTitle)
+          category = node.categoryTitle;
+          pathUrl = "/blogg/kategorier/";
+          pageComponent = require.resolve(`./src/templates/category.js`);
+      } else if (node.internal.type === "SanityPage") {
+          titleAsSlug = createSlug(node.title);
+          pathUrl = "/";
+          pageComponent = require.resolve(`./src/templates/page.js`);
+      } else {
+          titleAsSlug = createSlug(node.title);
+          pathUrl = "/blogg/";
+          pageComponent = (node.internal.type === "SanityPost" ? require.resolve(`./src/templates/blogPost.js`) : require.resolve(`./src/templates/book.js`));
+      }
 
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+      slug = !node.slug ? titleAsSlug : node.slug.current;
 
       createPage({
-        path: post.fields.slug,
-        component: blogPost,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-        },
+          path: `${pathUrl}${slug}`,
+          component: pageComponent,
+          context: { id },
       })
-    })
   }
-}
-
-/**
- * @type {import('gatsby').GatsbyNode['onCreateNode']}
- */
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-}
-
-/**
- * @type {import('gatsby').GatsbyNode['createSchemaCustomization']}
- */
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-
-  // Explicitly define the siteMetadata {} object
-  // This way those will always be defined even if removed from gatsby-config.js
-
-  // Also explicitly define the Markdown frontmatter
-  // This way the "MarkdownRemark" queries will return `null` even when no
-  // blog posts are stored inside "content/blog" instead of returning an error
-  createTypes(`
-    type SiteSiteMetadata {
-      author: Author
-      siteUrl: String
-      social: Social
-    }
-
-    type Author {
-      name: String
-      summary: String
-    }
-
-    type Social {
-      twitter: String
-    }
-
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-      fields: Fields
-    }
-
-    type Frontmatter {
-      title: String
-      description: String
-      date: Date @dateformat
-    }
-
-    type Fields {
-      slug: String
-    }
-  `)
+  
+  // Create single pages
+  data.pages.edges.forEach(({ node }) => {
+      if (node.title != "Hjem") {
+          createPages(node)
+      }
+  })
 }
