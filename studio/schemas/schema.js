@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import blogPostImage from './blogPostImage'
 import clients from './clients'
 import events from './events'
+import pages from './pages'
 import podcast from './podcast'
 import person from './person'
 import posts from "./posts"
@@ -19,11 +20,12 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     blogPostImage,
+    posts,
     clients,
     events,
+    pages,
     person,
     podcast,
-    posts,
     work
   ]),
 })

@@ -2,6 +2,7 @@
 
 # Worklog
 ## 13.11.22
+- Added page schema.
 - Sanity and Gatsby is connected!
     ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668362203/Wyatt/Skjermbilde_2022-11-13_kl._18.56.12_y2wfcw.png)
 - Reinstalled Gatsby and installed a starter blog theme for a more easy conversion.

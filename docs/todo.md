@@ -77,11 +77,13 @@ The project is separated into the following main categories:
         - [x] Contact persons email
         - [ ] Work (refer to work and event list)
         - [ ] Logo, or is that to difficult?
-    - [ ] Pages
-        - [ ] Home
-        - [ ] Blog
-        - [ ] About
-        - [ ] Etc
+    - [x] Pages
+        - [x] Home
+        - [x] Blog
+        - [x] About
+        - [x] Work
+        - [x] Events
+        - [x] Contact 
     - [ ] Rich text modules
         - [ ] Work
         - [ ] Client
