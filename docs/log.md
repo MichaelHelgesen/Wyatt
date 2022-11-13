@@ -2,6 +2,7 @@
 
 # Worklog
 ## 13.11.22
+- Added a menu schema for manualy handling of menu.
 - Pages are working on the webpage.
     ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668372706/Wyatt/Skjermbilde_2022-11-13_kl._21.51.34_eg0xhv.png)
 - Created page generating from page category in gatsby-node.js.

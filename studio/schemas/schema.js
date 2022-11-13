@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import blogPostImage from './blogPostImage'
 import clients from './clients'
 import events from './events'
+import menu from './menu'
 import pages from './pages'
 import podcast from './podcast'
 import person from './person'
@@ -23,6 +24,7 @@ export default createSchema({
     posts,
     clients,
     events,
+    menu,
     pages,
     person,
     podcast,

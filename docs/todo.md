@@ -78,12 +78,18 @@ The project is separated into the following main categories:
         - [ ] Work (refer to work and event list)
         - [ ] Logo, or is that to difficult?
     - [x] Pages
-        - [x] Home
-        - [x] Blog
-        - [x] About
-        - [x] Work
-        - [x] Events
-        - [x] Contact 
+        - [x] Page types
+            - [x] Home
+            - [x] Blog
+            - [x] About
+            - [x] Work
+            - [x] Events
+            - [x] Contact
+        - [x] Create pages from pages category in gatsby-node.js
+        - [x] Create a temporary page template
+    - [ ] Menu
+        - [x] Create menu schema
+        - [ ] Create dynamic meny based on menu schema in sanity
     - [ ] Rich text modules
         - [ ] Work
         - [ ] Client
