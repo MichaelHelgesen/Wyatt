@@ -55,6 +55,26 @@ export default {
             )
         },
         {
+            title: 'Facebook',
+            name: 'facebook',
+            type: 'url',
+        },
+        {
+            title: 'Instagram',
+            name: 'instagram',
+            type: 'url',
+        },
+        {
+            title: 'LinkedIn',
+            name: 'linkedin',
+            type: 'url',
+        },
+        {
+            title: 'TikTok',
+            name: 'tiktok',
+            type: 'url',
+        },
+        {
             description: "A portrait image of the person in question",
             type: 'blogPostImage',
             name: "image"
