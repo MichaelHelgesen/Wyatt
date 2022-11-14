@@ -38,19 +38,19 @@ The project is separated into the following main categories:
         - [x] Email
         - [x] Webpage 
         - [x] Rich text
-        - [ ] Work (refer to work and event lists)?
-        - [ ] Quotes (refer to quotes)?
+        - [ ] ~~Work (refer to work and event lists)?~~
+        - [ ] ~~Quotes (refer to quotes)?~~
         - [x] Image
         - [x] Pronoun
         - [x] Title
         - [x] Workplace
-        - [ ] Other?
+        - [x] Social media
     - [ ] Work
         - [x] Title
         - [x] Short intro
         - [x] Publish date
         - [x] Client (refer to client list?)
-        - [ ] Person responsible (refer to person list?)
+        - [ ] ~~Person responsible (refer to person list?)~~
         - [x] Rich text
         - [x] Hero-Image
         - [ ] Images for carousel or gallery (folder on cloudinary?)
@@ -65,16 +65,16 @@ The project is separated into the following main categories:
         - [ ] Images for carousel or gallery
     - [x] Quotes
         - [x] From person in person list (who is also connected to a client)
-        - [ ] Work in question (refer to work and event list)
+        - [x] Work in question (refer to work and event list) Do we need this? **Can fetch from person connected to client, and client connected to work?**
         - [x] Quote
-    - [ ] Clients
+    - [x] Clients
         - [x] Company
-        - [x] Contact person
-        - [x] Quote
+        - [x] Person (refer to person list)
+        - [x] ~~Quote~~
         - [x] Company URL
         - [x] Contact persons email
-        - [ ] Work (refer to work and event list)
-        - [ ] Logo, or is that to difficult?
+        - [ ] ~~Work (refer to work and event list)~~
+        - [x] Logo, or is that to difficult to maintain / add?
     - [x] Pages
         - [x] Page types
             - [x] Home
@@ -87,7 +87,7 @@ The project is separated into the following main categories:
         - [x] Create a temporary page template
     - [ ] Menu
         - [x] Create menu schema
-        - [ ] Create dynamic meny based on menu schema in sanity
+        - [x] Create dynamic meny based on menu schema in sanity
     - [ ] Rich text modules
         - [ ] Work
         - [ ] Client
