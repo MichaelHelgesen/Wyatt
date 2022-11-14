@@ -1,7 +1,10 @@
+import { MdOpenInBrowser } from 'react-icons/md'
+
 export default {
     title: 'Page',
     name: 'page',
     type: 'document',
+    icon: MdOpenInBrowser,
     fields: [
         {
             title: 'Title',
@@ -78,7 +81,7 @@ export default {
             description: 'introduction'
         },
         prepare(selection) {
-            const { title, description, date } = selection
+            const { title, description } = selection
             return {
                 title: title,
                 subtitle: `${description}`,

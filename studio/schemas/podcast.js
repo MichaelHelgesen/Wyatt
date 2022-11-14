@@ -1,8 +1,10 @@
+import { MdOutlinePodcasts } from 'react-icons/md'
 
 export default {
     title: 'Podcast',
     name: 'podcast',
     type: 'document',
+    icon: MdOutlinePodcasts,
     fields: [
         {
             title: 'Title',

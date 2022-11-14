@@ -1,8 +1,10 @@
+import { MdMenu } from 'react-icons/md'
 
 export default {
     title: 'Menu',
     name: 'menu',
     type: 'document',
+    icon: MdMenu,
     fields: [
         {
             description: "Choose pages to include in menu, and arrange them in prefered order",
@@ -30,20 +32,5 @@ export default {
             ],
         },
     ],
-    preview: {
-        select: {
-            title: 'title',
-            description: 'description',
-            place: "place",
-            date: 'date',
-            image: 'image'
-        },
-        prepare(selection) {
-            const { title, description, date, image } = selection
-            return {
-                title: "Menu",
-            }
-        }
-    }
 }
 

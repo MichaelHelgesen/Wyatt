@@ -3,6 +3,7 @@
 # Worklog
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
+
 ## 14.11.22
 - **Added icons** to the content categories in Sanity Studio.
 - Structured the content categories in Sanity Studio

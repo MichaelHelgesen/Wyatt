@@ -1,8 +1,10 @@
+import { MdOutlineTextSnippet } from 'react-icons/md'
 
 export default {
     title: 'Blogpost',
     name: 'post',
     type: 'document',
+    icon: MdOutlineTextSnippet,
     fields: [
         {
             title: 'Title',

@@ -1,4 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
+import { MdMenu } from 'react-icons/md'
 
 export default () =>
   // New Studio content list
@@ -11,6 +12,7 @@ export default () =>
       S.listItem()
         // Title of the item
         .title("Menu")
+        .icon(MdMenu)
         // The child of the item (what is revealed on click)
         .child(
           // Return a document editor
@@ -19,6 +21,7 @@ export default () =>
             .schemaType("menu")
             // ID of document
             .documentId("menu")
+            .title("Menu")
         ),
       S.divider(),
       S.listItem()

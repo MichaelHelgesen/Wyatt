@@ -1,8 +1,10 @@
+import { MdOutlineWork } from 'react-icons/md'
 
 export default {
     title: 'Client',
     name: 'client',
     type: 'document',
+    icon: MdOutlineWork,
     fields: [
         {
             description: "Company name or other name",

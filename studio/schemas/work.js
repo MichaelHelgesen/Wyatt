@@ -1,8 +1,10 @@
+import { MdDesignServices } from 'react-icons/md'
 
 export default {
     title: 'Work',
     name: 'work',
     type: 'document',
+    icon: MdDesignServices,
     fields: [
         {
             title: 'Title',
