@@ -29,9 +29,35 @@ export default {
             type: 'string',
         },
         {
+            description: 'Workplace if not a client. If a client, choose from client list below',
             title: 'Workplace',
             name: 'workplace',
             type: 'string',
+        },
+        {
+            description: "Choose from clients list if person is from one of the clients. If not, add a . workplace in the field above.",
+            name: "client",
+            title: "Client",
+            type: "array",
+            of: [
+                {
+                    type: 'reference',
+                    to: [{ type: 'person' }],
+                    options: {
+                        filter: ({ parent }) => {
+                            const existingClient = parent.map(item => {
+                                return item._ref;
+                            })
+                            return {
+                                filter: "_id in $ref == false",
+                                params: {
+                                    ref: existingClient
+                                }
+                            }
+                        }
+                    }
+                },
+            ],
         },
         {
             title: 'E-mail',
