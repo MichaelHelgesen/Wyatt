@@ -55,7 +55,7 @@ export default () =>
         .child(
             S.documentList()
             .title('Event')
-            .filter('_type == "event"')
+            .filter('_type == "events"')
     ),
     S.divider(),
     S.listItem()
