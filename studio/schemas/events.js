@@ -1,11 +1,11 @@
 
-import { MdLocalMovies } from 'react-icons/md'
+import { MdEventSeat } from 'react-icons/md'
 
 export default {
     title: 'Event',
     name: 'events',
     type: 'document',
-    icon: MdLocalMovies,
+    icon: MdEventSeat,
     fields: [
         {
             title: 'Title',
