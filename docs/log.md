@@ -5,6 +5,7 @@ A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
 ## 14.11.22
+- Added quotes.
 - Sanity Studio with icons and structure
     ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668435377/Wyatt/Skjermbilde_2022-11-14_kl._15.15.35_h2rtra.png)
 - **Added icons** to the content categories in Sanity Studio.

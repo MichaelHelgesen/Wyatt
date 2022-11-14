@@ -63,12 +63,10 @@ The project is separated into the following main categories:
         - [x] Rich text
         - [x] Hero-image
         - [ ] Images for carousel or gallery
-    - [ ] ~~Quotes~~
-        - [ ] ~~From company~~
-        - [ ] ~~From person~~
-        - [ ] ~~Person in question~~
-        - [ ] ~~Work in question~~
-        - [ ] ~~Quote~~
+    - [x] Quotes
+        - [x] From person in person list (who is also connected to a client)
+        - [ ] Work in question (refer to work and event list)
+        - [x] Quote
     - [ ] Clients
         - [x] Company
         - [x] Contact person

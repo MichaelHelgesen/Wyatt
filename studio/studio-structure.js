@@ -67,6 +67,14 @@ export default () =>
             .filter('_type == "client"')
     ),
     S.listItem()
+        .title('Quote')
+        .schemaType('quote')
+        .child(
+            S.documentList()
+            .title('Quote')
+            .filter('_type == "quote"')
+    ),
+    S.listItem()
         .title('Person')
         .schemaType('person')
         .child(
@@ -77,6 +85,6 @@ export default () =>
     S.divider(),
       // Return rest of content list items, but filter out those already listed
       ...S.documentTypeListItems().filter(
-        (listItem) => !["menu", "post", "podcast", "events", "work", "client", "person"].includes(listItem.getId())
+        (listItem) => !["menu", "post", "podcast", "events", "work", "client", "person", "quote"].includes(listItem.getId())
       ),
     ]);

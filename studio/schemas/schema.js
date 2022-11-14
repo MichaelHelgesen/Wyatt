@@ -11,6 +11,7 @@ import pages from './pages'
 import podcast from './podcast'
 import person from './person'
 import posts from "./posts"
+import quotes from './quotes'
 import work from './work'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,6 +29,7 @@ export default createSchema({
     pages,
     person,
     podcast,
+    quotes,
     work
   ]),
 })
