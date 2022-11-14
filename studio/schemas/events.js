@@ -1,8 +1,11 @@
 
+import { MdLocalMovies } from 'react-icons/md'
+
 export default {
     title: 'Event',
     name: 'events',
     type: 'document',
+    icon: MdLocalMovies,
     fields: [
         {
             title: 'Title',

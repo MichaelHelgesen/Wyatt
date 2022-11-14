@@ -1,32 +1,66 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 //import * as style from "../components/menu.module.scss"
-
-const Menu = () => (
-      <Layout>
-        <h1>Laverne Wyatt</h1>
-      <ul style={{display: "flex", listStyleType: "none", justifyContent: "space-between"}}>
-        <li>
-            <Link to="/" >Home</Link>
-        </li>
-        <li>
-            <Link to="/work-and-events"  partiallyActive={true}>Work and Events</Link>
-        </li>
-        <li>
-            <Link to="/blog"  partiallyActive={true}>Blog</Link>
-        </li>
-        <li>
-            <Link to="/podcasts"  partiallyActive={true}>Podcasts</Link>
-        </li>
-        <li>
-            <Link to="/about"  partiallyActive={true}>About</Link>
-        </li>
-        <li>
-            <Link to="/contact"  partiallyActive={true}>Contact</Link>
-        </li>
-    </ul>
+/*
+export const menuQuery = graphql`
+  query {
+    allSanityMenu {
+        edges {
+          node {
+            menupages {
+              id
+              slug {
+                current
+              }
+              title
+            }
+            _id
+          }
+        }
+      }
+    }
+`
+*/
+const Menu = () => {
+    const data = useStaticQuery(graphql`
+      query menuQuery {
+        allSanityMenu {
+            edges {
+              node {
+                menupages {
+                  id
+                  slug {
+                    current
+                  }
+                  title
+                }
+                _id
+              }
+            }
+          }
+      }
+    `)
+    
+  const menuItems = data.allSanityMenu.edges[0].node.menupages
+  return (
+    <Layout>
+      <h1>Laverne Wyatt</h1>
+      <ul
+        style={{
+          display: "flex",
+          listStyleType: "none",
+          justifyContent: "space-between",
+        }}
+      >
+        {menuItems.map((post, index) => (
+        <li key={index}>
+        <Link to={`/${post.slug.current}`}>{post.title}</Link>
+      </li>
+        ))}
+      </ul>
     </Layout>
-)
+  )
+}
 
 export default Menu

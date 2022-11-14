@@ -1,6 +1,14 @@
 **MENU:** [Home](/wyatt/index) - [TODO](/wyatt/todo) - [**Worklog**](/wyatt/log)
 
 # Worklog
+A bullet list of different tasks done from day to day.
+**Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
+## 14.11.22
+- **Added icons** to the content categories in Sanity Studio.
+- Structured the content categories in Sanity Studio
+- Added a dynamic meny in Gatsby.
+- Studied how to **deploy to Netlify from Studio**.
+- Watched a couple of videos and read some blogs about Sanity, and got a lot of ideas how to **structure the studio**. Adding modules to control the look of the page seems very cool - will need a design system though. **How can I import modules dynamically in Gatsby?**
 ## 13.11.22
 - Added a menu schema for manualy handling of menu.
 - Pages are working on the webpage.
