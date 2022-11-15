@@ -26,6 +26,11 @@ export default {
             }
         },
         {
+            type: "cloudinary.asset",
+            name: "podcast",
+            description: "This asset is served from Cloudinary",
+          },
+        {
             description: "Publish date",
             title: 'Date',
             name: 'date',
