@@ -1,10 +1,7 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Menu from "../components/menu"
-import Bio from "../components/bio"
 import Layout from "../components/layout"
-//import Layout from "../components/layout"
-//import Seo from "../components/seo"
 
 export const pageQuery = graphql`
   query {
@@ -21,12 +18,16 @@ export const pageQuery = graphql`
   }
 `
 
+
+ 
+
 const BlogIndex = ({ data, location }) => {
+  
   //const siteTitle = data.site.siteMetadata?.title || `Title`
   //const posts = data.allMarkdownRemark.nodes
   return (
     <div>
-      <div>
+       <div>
         <Menu />
         <Layout>
         {data.allSanityPost.edges.map((post, index) => (
@@ -36,10 +37,12 @@ const BlogIndex = ({ data, location }) => {
             </div>
         ))}
         </Layout>
-    </div>
+    </div> 
     </div>
   )
 }
+
+
 
 export default BlogIndex
 

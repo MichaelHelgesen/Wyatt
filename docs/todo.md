@@ -112,15 +112,18 @@ The project is separated into the following main categories:
 - [x] Install Sanity
 
 ### Static Site Generator
-- [x] Install Gatsby or Next
+- [x] Install Gatsby or ~~Next~~
     - [x] Gatsby
     - [ ] Set up Gatsby cloud for real time editing?
     - [x] Connect Sanity to Gatsby
         - [x] Install gatsby-source-sanity
+    - [ ] Set up .env-file
 
 
 ### DAM
-- [ ] Connect Cloudinary?
+- [ ] Connect Sanity to Cloudinary?
+  - [x] Gallery
+  - [ ] Sanity image module
 - [ ] Connect Unsplash
 
 ### Deployment

@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 /**
  * Configure your Gatsby site with this file.
  *
@@ -7,6 +11,9 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -64,6 +71,7 @@ module.exports = {
         projectId: '9hij0w7q',
         dataset: 'production',
         watchMode: true,
+        token: process.env.SANITY_TOKEN,
       },
     },
     {

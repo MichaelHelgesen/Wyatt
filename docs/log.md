@@ -4,6 +4,10 @@
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
+## 15.11.22
+- Added Cloudinary Plugin that can select multiple images in array for gallery.
+- Added the ability to choose assets from Cloudinary.
+
 ## 14.11.22
 - Created two Figma files: wireframe and design. This is the wireframe:
     ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668458738/Wyatt/Skjermbilde_2022-11-14_kl._21.36.08_mdxt3z.png)
