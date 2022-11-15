@@ -45,7 +45,7 @@ The project is separated into the following main categories:
         - [x] Title
         - [x] Workplace
         - [x] Social media
-    - [ ] Work
+    - [x] Work
         - [x] Title
         - [x] Short intro
         - [x] Publish date
@@ -53,8 +53,8 @@ The project is separated into the following main categories:
         - [ ] ~~Person responsible (refer to person list?)~~
         - [x] Rich text
         - [x] Hero-Image
-        - [ ] Images for carousel or gallery (folder on cloudinary?)
-    - [ ] Events
+        - [x] Images for carousel or gallery (folder on cloudinary?)
+    - [x] Events
         - [x] Title
         - [x] Date
         - [x] Place
@@ -62,7 +62,7 @@ The project is separated into the following main categories:
         - [x] Short intro
         - [x] Rich text
         - [x] Hero-image
-        - [ ] Images for carousel or gallery
+        - [x] Images for carousel or gallery
     - [x] Quotes
         - [x] From person in person list (who is also connected to a client)
         - [x] Work in question (refer to work and event list) Do we need this? **Can fetch from person connected to client, and client connected to work?**
@@ -85,7 +85,7 @@ The project is separated into the following main categories:
             - [x] Contact
         - [x] Create pages from pages category in gatsby-node.js
         - [x] Create a temporary page template
-    - [ ] Menu
+    - [x] Menu
         - [x] Create menu schema
         - [x] Create dynamic meny based on menu schema in sanity
     - [ ] Rich text modules
