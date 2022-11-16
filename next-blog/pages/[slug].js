@@ -2,19 +2,18 @@ import { sanityClient } from '../sanity'
 import Menu from '../components/Menu';
 
 
-const Post = ({ data }) => {
-    console.log(data.allPosts.title)
+const Page = ({ data }) => {
   return (
     <div>
-    <p>dd</p>
-   <div>{data.allPosts.title}</div>
+     <Menu test={data.allPages2}/>
+    <p>{data.allPages.title}</p>
    </div>
   )
 };
-export default Post;
+export default Page;
 
 export async function getStaticPaths() {
-    const query = '*[_type == "post" && defined(slug.current)][].slug.current'
+    const query = '*[_type == "page" && defined(slug.current)][].slug.current'
     const response = await sanityClient.fetch(query)
     const paths = response.map((slug) => ({
       params: {slug}
@@ -26,8 +25,8 @@ export async function getStaticPaths() {
   }
 
   export async function getStaticProps({ params }) {
-    const allPosts = await sanityClient.fetch(`
-        *[_type == "post" && slug.current == $slug] [0] | order(date desc, _createdAt desc) {
+    const allPages = await sanityClient.fetch(`
+        *[_type == "page" && slug.current == $slug] [0] {
           _id,
           title,
         }`,
@@ -35,10 +34,16 @@ export async function getStaticPaths() {
         slug: params.slug
       }
     )
+    const allPages2 = await sanityClient.fetch(`
+        *[_type == "page"] {
+          title,
+        }`,
+    )
     return {
       props: {
         data: {
-          allPosts,
+          allPages,
+          allPages2
         },
       },
     }
