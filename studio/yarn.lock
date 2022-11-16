@@ -9363,7 +9363,7 @@ sanity-diff-patch@^1.0.9:
 
 sanity-plugin-cloudinary@^0.2.2:
   version "0.2.2"
-  resolved "https://registry.npmjs.org/sanity-plugin-cloudinary/-/sanity-plugin-cloudinary-0.2.2.tgz#ec0bc5db0aa142f0cb5fa97594183f770a8c4c42"
+  resolved "https://registry.yarnpkg.com/sanity-plugin-cloudinary/-/sanity-plugin-cloudinary-0.2.2.tgz#ec0bc5db0aa142f0cb5fa97594183f770a8c4c42"
   integrity sha512-luublwZdoEPR092uwyV53RZj+LvKe52gUaqy+S5jxjsVHA861sKjIjS4VniGzj/GfSORJfZgVJwpmhU91579JQ==
   dependencies:
     nanoid "^3.1.22"
@@ -9373,7 +9373,7 @@ sanity-plugin-cloudinary@^0.2.2:
 
 sanity-secrets@^0.0.6:
   version "0.0.6"
-  resolved "https://registry.npmjs.org/sanity-secrets/-/sanity-secrets-0.0.6.tgz#acd477c496a4d03e69ed172887f9644dcf577c0d"
+  resolved "https://registry.yarnpkg.com/sanity-secrets/-/sanity-secrets-0.0.6.tgz#acd477c496a4d03e69ed172887f9644dcf577c0d"
   integrity sha512-NUUvFAR9ms23+q5d5sznCp8/Zg1NGAQ3gSi0ElFETwoIt6+gMKCM2CBQtK1PZkExeXeJlSqaNfQiVe3be77GXQ==
 
 sax@~1.2.4:

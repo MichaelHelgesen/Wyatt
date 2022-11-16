@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Menu from "../components/menu"
 import Layout from "../components/layout"
 
+
 export const pageQuery = graphql`
   query {
     allSanityPost{
@@ -18,13 +19,9 @@ export const pageQuery = graphql`
   }
 `
 
-
  
 
-const BlogIndex = ({ data, location }) => {
-  
-  //const siteTitle = data.site.siteMetadata?.title || `Title`
-  //const posts = data.allMarkdownRemark.nodes
+const BlogIndex = ({ data }) => {
   return (
     <div>
        <div>
@@ -32,7 +29,7 @@ const BlogIndex = ({ data, location }) => {
         <Layout>
         {data.allSanityPost.edges.map((post, index) => (
 
-            <div style={{ backgroundColor: '#ddd', padding: '20px', margin: '20px 0' }}>
+            <div key={index} style={{ backgroundColor: '#ddd', padding: '20px', margin: '20px 0' }}>
                 <h2 style={{margin: "0"}}>{post.node.title}</h2>
             </div>
         ))}
