@@ -6,7 +6,12 @@ const Page = ({ data }) => {
   return (
     <div>
      <Menu test={data.allPages2}/>
-    <p>{data.allPages.title}</p>
+    <h2 style={{
+      textAlign: "center",
+      opacity: ".8"
+    }}>
+      {data.allPages.title}
+      </h2>
    </div>
   )
 };

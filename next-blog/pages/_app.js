@@ -1,9 +1,11 @@
 import '../styles/globals.css'
 import Menu from '../components/Menu'
+import Header from '../components/Header'
+
 function MyApp({ Component, pageProps }) {
   return (
   <div>
-  k
+  <Header />
   <Component {...pageProps} />
   </div>
   )
