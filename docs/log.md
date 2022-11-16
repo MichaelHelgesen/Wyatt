@@ -5,13 +5,13 @@ A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
 ## 16.11.22
-- Usin GROQ as query language, instead of graphQL.
-- Created a menu component.
-- Created dynamic nested pages.
+- **Using GROQ as query language**, instead of graphQL.
+- Created a **menu component in Next**.
+- **Created dynamic nested pages**.
 ## 15.11.22
 - Created dynamic pages from blogposts in Next.
-- Installed Next.
-- Added Cloudinary Plugin that can select multiple images in array for gallery.
+- **Installed Next**.
+- Added **Cloudinary Plugin** that can select multiple images in array for gallery.
 - Added the ability to choose assets from Cloudinary.
 
 ## 14.11.22
