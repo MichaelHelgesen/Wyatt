@@ -11,10 +11,10 @@ const Menu = ({ test }) => {
         borderTop: "1px solid black",
       }}
     >
-      {test.map((item, index) => {
+      {test[0].menupages.map((item, index) => {
         return (
           <li key={index} style={{ padding: "0 5px 0 0" }}>
-            {item.title}
+            <a href={item.slug.current}>{item.title}</a>
           </li>
         );
       })}
