@@ -5,10 +5,12 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import blogPostImage from './blogPostImage'
 import clients from './clients'
+import demotext from './demotext'
 import events from './events'
 import menu from './menu'
 import pages from './pages'
 import podcast from './podcast'
+import portableTextDemo from './portableTextDemo'
 import person from './person'
 import posts from "./posts"
 import quotes from './quotes'
@@ -24,11 +26,13 @@ export default createSchema({
     blogPostImage,
     posts,
     clients,
+    demotext,
     events,
     menu,
     pages,
     person,
     podcast,
+    portableTextDemo,
     quotes,
     work
   ]),

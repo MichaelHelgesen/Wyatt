@@ -1,64 +1,90 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Menu from "../components/menu"
-import Layout from "../components/layout"
-//import BlockContent from '@sanity/block-content-to-react'
-//import serializers from "../components/serializers"
-//import * as style from "../templates/page.module.scss"
-//import BlogList from "../components/blogList"
-//import Notes from "../components/notesList"
-//import BookList from "../components/bookList"
-//import CategoryList from "../components/categoryList"
-//import { Helmet } from "react-helmet"
-//import ImageGallery from "../components/imageGallery"
-//import Dictionary from "../components/dictionary"
+import Header from "../components/header"
+import BlockContent from "@sanity/block-content-to-react"
+import serializers from "../components/serializers"
+import { PortableText } from "@portabletext/react"
 
 export const pageQuery = graphql`
-query ($id: String!){
-     page: sanityPage(id: {eq: $id}) {
-        id
-        introduction
-        title
-        _rawContent(resolveReferences:{maxDepth:10})
+  query ($id: String!) {
+    page: sanityPage(id: { eq: $id }) {
+      id
+      introduction
+      title
+      content {
+        _rawChildren
       }
-      site {
-        siteMetadata {
-          title
-          description
-        }
+      _rawContent(resolveReferences: { maxDepth: 10 })
+    }
+    site {
+      siteMetadata {
+        title
+        description
       }
     }
+    allSanityDemotext {
+        edges {
+            node {
+                _rawDemotext(resolveReferences: { maxDepth: 10 })
+            }
+        }
+    }
+  }
 `
 
 const Page = ({ data }) => {
-
-    return (
+    console.log(data.allSanityDemotext)
+  return (
+    <div>
+      <Header />
+      <div
+        style={{
+          maxWidth: "500px",
+          margin: "0 auto",
+        }}
+      >
+        <h1
+          style={{
+            textAlign: "left",
+          }}
+        >
+          {data.page.title}
+        </h1>
+        <p
+            style={{
+                fontWeight: "bold",
+                borderBottom: "1px solid black",
+                paddingBottom: "10px"
+            }}
+        >
+            {data.page.introduction ? (
+                <p>
+                    {data.page.introduction}
+                </p>
+            ) : (
+                <PortableText
+              value={data.allSanityDemotext.edges[0].node._rawDemotext[1].content}
+              components={serializers}
+            />
+            )}
+        </p>
         <div>
-            <Menu />
-            <Layout>
-                <div>
-                    <meta charSet="utf-8" />
-                    <title>{data.page.title}{data.site.siteMetadata.titleTemplate}</title>
-                    <link rel="canonical" href={`${data.site.siteMetadata.url}/${data.page.title.toLowerCase()}`} />
-                </div>
-                <div>
-                    <div>
-                        <div>
-                            <small>
-                                <Link to={`/`}>hjem</Link>{data.page.title === "Kategorier" ? <span> / <Link to={`/blogg/`}>blogg</Link> /</span> : <span> /</span>}
-                            </small>
-                            <h1>{data.page.title}</h1>
-                            <p>{data.page.introduction}</p>
-                        </div>
-                        <div></div>
-                    </div>
-                    <div>
-                    </div>
-                    {data.page.title === "Blogg" ? <div></div> : null}
-                </div>
-            </Layout>
+          {data.page.content ? (
+            <PortableText
+              value={data.page._rawContent}
+              components={serializers}
+            />
+          ) : (
+            <PortableText
+              value={data.allSanityDemotext.edges[0].node._rawDemotext[0].content}
+              components={serializers}
+            />
+          )}
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
 export default Page
