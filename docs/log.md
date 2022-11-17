@@ -5,6 +5,7 @@ A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
 ## 17.11.22
+- Added the ability to highlight text in Portable Text.
 - Webpage now fetches data from Sanity and displays it:
     ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668372706/Wyatt/Skjermbilde_2022-11-13_kl._21.51.34_eg0xhv.png)
 - Installed schema for template text.

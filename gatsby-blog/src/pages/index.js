@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Menu from "../components/menu"
 import Layout from "../components/layout"
-
+import Footer from "../components/footer"
 
 export const pageQuery = graphql`
   query {
@@ -19,22 +19,27 @@ export const pageQuery = graphql`
   }
 `
 
- 
+
 
 const BlogIndex = ({ data }) => {
   return (
     <div>
-       <div>
+      <div>
         <Menu />
         <Layout>
-        {data.allSanityPost.edges.map((post, index) => (
-
+          {data.allSanityPost.edges.map((post, index) => (
             <div key={index} style={{ backgroundColor: '#ddd', padding: '20px', margin: '20px 0' }}>
-                <h2 style={{margin: "0"}}>{post.node.title}</h2>
+              <h2
+                style={{
+                  margin: "0"
+                }}
+              >
+                {post.node.title}
+              </h2>
             </div>
-        ))}
+          ))}
         </Layout>
-    </div> 
+      </div>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import Header from "../components/header"
 import BlockContent from "@sanity/block-content-to-react"
 import serializers from "../components/serializers"
 import { PortableText } from "@portabletext/react"
+import Footer from "../components/footer"
 
 export const pageQuery = graphql`
   query ($id: String!) {
@@ -34,7 +35,7 @@ export const pageQuery = graphql`
 `
 
 const Page = ({ data }) => {
-    console.log(data.allSanityDemotext)
+  console.log(data.allSanityDemotext)
   return (
     <div>
       <Header />
@@ -51,25 +52,30 @@ const Page = ({ data }) => {
         >
           {data.page.title}
         </h1>
-        <p
-            style={{
-                fontWeight: "bold",
-                borderBottom: "1px solid black",
-                paddingBottom: "10px"
-            }}
+        <div
+          style={{
+            fontWeight: "bold",
+            borderBottom: "1px solid black",
+            paddingBottom: "10px"
+          }}
         >
-            {data.page.introduction ? (
-                <p>
-                    {data.page.introduction}
-                </p>
-            ) : (
-                <PortableText
+          {data.page.introduction ? (
+            <p>
+              {data.page.introduction}
+            </p>
+          ) : (
+            <PortableText
               value={data.allSanityDemotext.edges[0].node._rawDemotext[1].content}
               components={serializers}
             />
-            )}
-        </p>
-        <div>
+          )}
+        </div>
+        <div
+          style={{
+            marginTop: "40px",
+            paddingBottom: "50px"
+          }}
+        >
           {data.page.content ? (
             <PortableText
               value={data.page._rawContent}
@@ -83,6 +89,7 @@ const Page = ({ data }) => {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

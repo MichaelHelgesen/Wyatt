@@ -10,6 +10,7 @@ import events from './events'
 import menu from './menu'
 import pages from './pages'
 import podcast from './podcast'
+import podCastPlayer from './podcastPlayer'
 import portableTextDemo from './portableTextDemo'
 import person from './person'
 import posts from "./posts"
@@ -24,6 +25,7 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     blogPostImage,
+    podCastPlayer,
     posts,
     clients,
     demotext,

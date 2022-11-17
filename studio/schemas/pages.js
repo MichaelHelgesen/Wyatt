@@ -1,4 +1,10 @@
 import { MdOpenInBrowser } from 'react-icons/md'
+import React from "react"
+
+const highlightRender = props => (
+    <span style={{ backgroundColor: 'yellow' }}>{props.children}</span>
+)
+
 
 export default {
     title: 'Page',
@@ -54,39 +60,60 @@ export default {
                         { title: "H5", value: "h5" },
                         { title: "H6", value: "h6" },
                         { title: "Quote", value: "blockquote" },
-                      ],
+                    ],
+                    marks: {
+                        decorators: [
+                            { title: 'Strong', value: 'strong' },
+                            { title: 'Emphasis', value: 'em' },
+                            { title: 'Code', value: 'code' },
+                            { "title": "Underline", "value": "underline" },
+                            { "title": "Strike", "value": "strike-through" },
+                            {
+                                title: 'Highlight',
+                                value: 'highlight',
+                                blockEditor: {
+                                    icon: () => 'H',
+                                    render: highlightRender
+                                }
+                            }
+                        ]
+                    },
+                    
                 },
-            ]
-        }
+                {
+                    type: 'podcastPlayer'
+                }, 
+    ]
+}
     ],
-    orderings: [
-        {
-            title: 'Title, ascending',
-            name: 'titleAsc',
-            by: [
-                { field: 'title', direction: 'asc' }
-            ]
-        },
-        {
-            title: 'Title, descending',
-            name: 'titleDesc',
-            by: [
-                { field: 'title', direction: 'desc' }
-            ]
-        },
-    ],
+orderings: [
+    {
+        title: 'Title, ascending',
+        name: 'titleAsc',
+        by: [
+            { field: 'title', direction: 'asc' }
+        ]
+    },
+    {
+        title: 'Title, descending',
+        name: 'titleDesc',
+        by: [
+            { field: 'title', direction: 'desc' }
+        ]
+    },
+],
     preview: {
-        select: {
-            title: 'title',
+    select: {
+        title: 'title',
             description: 'introduction'
-        },
-        prepare(selection) {
-            const { title, description } = selection
-            return {
-                title: title,
-                subtitle: `${description}`,
-            }
+    },
+    prepare(selection) {
+        const { title, description } = selection
+        return {
+            title: title,
+            subtitle: `${description}`,
         }
     }
+}
 }
 

@@ -76,7 +76,11 @@ const Menu = () => {
               padding: "0",
             }}
           >
-            <Link to={`/${post.slug.current}`}><span style={{color:"black"}}>{post.title}</span></Link>
+            {post.title == "Home" ? (
+              <a href="/"><span style={{color:"black"}}>{post.title}</span></a>
+            ) : (
+              <Link to={`/${post.slug.current}`}><span style={{color:"black"}}>{post.title}</span></Link>
+            )}
           </li>
         ))}
       </ul>
