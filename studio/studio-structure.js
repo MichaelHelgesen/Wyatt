@@ -1,6 +1,8 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { MdMenu } from 'react-icons/md'
 
+
+
 export default () =>
   // New Studio content list
   S.list()
@@ -85,6 +87,21 @@ export default () =>
     S.divider(),
       // Return rest of content list items, but filter out those already listed
       ...S.documentTypeListItems().filter(
-        (listItem) => !["menu", "post", "podcast", "events", "work", "client", "person", "quote"].includes(listItem.getId())
+        (listItem) => !["menu", "post", "podcast", "events", "work", "demotext", "client", "person", "quote"].includes(listItem.getId())
+      ),
+      S.divider(),
+      S.listItem()
+      // Title of the item
+      .title("Demotext")
+      .icon(MdMenu)
+      // The child of the item (what is revealed on click)
+      .child(
+        // Return a document editor
+        S.document()
+          // What kind of document
+          .schemaType("demotext")
+          // ID of document
+          .documentId("demotext")
+          .title("Demotext")
       ),
     ]);
