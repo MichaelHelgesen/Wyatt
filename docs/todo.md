@@ -110,6 +110,18 @@ The project is separated into the following main categories:
 
 ### Sanity CMS
 - [x] Install Sanity
+  - [x] Schemas
+    - [x] Work
+    - [x] Events
+    - [x] Podcast
+    - [x] Pages
+    - [x] Blog
+    - [x] Clients
+    - [x] Menu
+    - [x] Client
+    - [x] Quote
+    - [x] Person
+  - [x] Icons in Studio
 
 ### Static Site Generator
 - [x] Install Gatsby or ~~Next~~
@@ -118,6 +130,8 @@ The project is separated into the following main categories:
     - [x] Connect Sanity to Gatsby
         - [x] Install gatsby-source-sanity
     - [ ] Set up .env-file
+    - [x] Dynamic page generation
+    - [x] Dynamic breadcrumbs
 
 
 ### DAM
