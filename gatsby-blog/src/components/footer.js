@@ -10,7 +10,12 @@ const Footer = () => {
                 padding: "50px 0"
             }}
         >
-            Footer
+            <h3
+                style={{
+                    color: "white",
+                    letterSpacing: "-6px"
+                }}
+            >LW</h3>
         </div>
     )
 }
