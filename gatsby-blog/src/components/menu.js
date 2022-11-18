@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Menu = () => {
@@ -76,7 +76,7 @@ const Menu = () => {
               padding: "0",
             }}
           >
-            {post.title == "Home" ? (
+            {post.title === "Home" ? (
               <a href="/"><span style={{color:"black"}}>{post.title}</span></a>
             ) : (
               <Link to={`/${post.slug.current}`}><span style={{color:"black"}}>{post.title}</span></Link>
