@@ -4,10 +4,17 @@
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
+## 18.11.22
+- Added a more dynamic breadcrumb and slug using **Gatsbys pageContext**
+- **Added breadcrumbs**.
+- Added list for blogs, events, podcasts and work on respective pages.
+- Created blog list template.
+- Edited gatsby-node to create pages for "pages", blogposts, events, podcasts and work.
 ## 17.11.22
+- Added podcast component to portable text.
 - Added the ability to highlight text in Portable Text.
 - Webpage now fetches data from Sanity and displays it:
-    ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668372706/Wyatt/Skjermbilde_2022-11-13_kl._21.51.34_eg0xhv.png)
+    ![This is an image](https://res.cloudinary.com/mikkesblogg/image/upload/v1668696243/Wyatt/Skjermbilde_2022-11-17_kl._15.43.29_meggal.png)
 - Installed schema for template text.
 - Installed Portable Text to React.
 - Went back to Gatsby (Next is not the best choice for simple blog).
