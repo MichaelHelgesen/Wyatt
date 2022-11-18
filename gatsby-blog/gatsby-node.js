@@ -3,57 +3,149 @@
 } */
 
 exports.createPages = async function ({ actions, graphql }) {
-  const { createPage } = actions;
+  const { createPage } = actions
   const { data } = await graphql(`
-  query {
+    query {
       pages: allSanityPage {
-          edges {
-            node {
-              id
-              internal {
-                  type
-                }
-              slug {
-                current
-              }
-              title
+        edges {
+          node {
+            id
+            internal {
+              type
             }
+            slug {
+              current
+            }
+            title
           }
         }
-  }
-`)
+      }
+      posts: allSanityPost {
+        edges {
+          node {
+            id
+            internal {
+              type
+            }
+            slug {
+              current
+            }
+            title
+          }
+        }
+      },
+      podcasts: allSanityPodcast {
+        edges {
+          node {
+            id
+            internal {
+              type
+            }
+            slug {
+              current
+            }
+            title
+          }
+        }
+      },
+      works: allSanityWork {
+        edges {
+          node {
+            id
+            internal {
+              type
+            }
+            slug {
+              current
+            }
+            title
+          }
+        }
+      }
+      events: allSanityEvents {
+        edges {
+          node {
+            id
+            internal {
+              type
+            }
+            slug {
+              current
+            }
+            title
+          }
+        }
+      }
+    }
+  `)
 
-  const createPages = (node) => {
+  const createSlug = string =>
+    string.toLowerCase().replace(/\s+/g, "-").slice(0, 200)
+
+  const createPages = node => {
     let id = node.id
-    const createSlug = (string) => string.toLowerCase().replace(/\s+/g, '-').slice(0, 200);
     let titleAsSlug
     let slug
     let pathUrl
+    let category
     let pageComponent
+    let type = node.internal.type
 
-    if (node.internal.type === "SanityPage") {
-      titleAsSlug = createSlug(node.title);
-      pathUrl = "/";
-      pageComponent = require.resolve(`./src/templates/page.js`);
-    } else {
-      titleAsSlug = createSlug(node.title);
-      pathUrl = "/blogg/";
-      pageComponent = (node.internal.type === "SanityPost" ? require.resolve(`./src/templates/blogPost.js`) : require.resolve(`./src/templates/book.js`));
+    if (type === "SanityPage") {
+      titleAsSlug = createSlug(node.title)
+      pathUrl = "/"
+      pageComponent = require.resolve(`./src/templates/page.js`)
+    } else if (type == "SanityPost") {
+      titleAsSlug = createSlug(node.title)
+      pathUrl = "/blog/"
+      pageComponent = require.resolve(`./src/templates/blog.js`)
+    } else if (type == "SanityPodcast") {
+      titleAsSlug = createSlug(node.title)
+      pathUrl = "/podcast/"
+      pageComponent = require.resolve(`./src/templates/podcast.js`)
+    } else if (type == "SanityWork") {
+      titleAsSlug = createSlug(node.title)
+      pathUrl = "/work/"
+      pageComponent = require.resolve(`./src/templates/work.js`)
+    } else if (type == "SanityEvents") {
+      titleAsSlug = createSlug(node.title)
+      pathUrl = "/events/"
+      pageComponent = require.resolve(`./src/templates/event.js`)
     }
-
-    slug = !node.slug ? titleAsSlug : node.slug.current;
+    slug = !node.slug ? titleAsSlug : node.slug.current
 
     createPage({
       path: `${pathUrl}${slug}`,
       component: pageComponent,
-      context: { id },
+      context: { id, type, pathUrl, slug },
     })
   }
 
   // Create single pages
   data.pages.edges.forEach(({ node }) => {
     if (node.title != "Home") {
+      console.log("Creating page: ", node.title)
       createPages(node)
     }
+  })
+  // Create blogposts
+  data.posts.edges.forEach(({ node }) => {
+    console.log("Creating blogpost: ", node.title)
+    createPages(node)
+  })
+  // Create podcast posts
+  data.podcasts.edges.forEach(({ node }) => {
+    console.log("Creating podcast post: ", node.title)
+    createPages(node)
+  })
+  // Create work posts
+  data.works.edges.forEach(({ node }) => {
+    console.log("Creating work post: ", node.title)
+    createPages(node)
+  })
+  // Create event posts
+  data.events.edges.forEach(({ node }) => {
+    console.log("Creating event post: ", node.title)
+    createPages(node)
   })
 }
