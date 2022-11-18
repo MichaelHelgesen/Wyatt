@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Menu from "../components/menu"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
+import BlogList from "../components/blogList"
 
 export const pageQuery = graphql`
   query {
@@ -21,23 +22,18 @@ export const pageQuery = graphql`
 
 
 
-const BlogIndex = ({ data }) => {
+const BlogIndex = ({ data, pageContext }) => {
   return (
     <div>
       <div>
         <Menu />
         <Layout>
-          {data.allSanityPost.edges.map((post, index) => (
-            <div key={index} style={{ backgroundColor: '#ddd', padding: '20px', margin: '20px 0' }}>
-              <h2
-                style={{
-                  margin: "0"
-                }}
-              >
-                {post.node.title}
-              </h2>
-            </div>
-          ))}
+          <h1 style={{margin:"0 0 5px 0"}}>
+            Laverne Wyatt
+            </h1>
+          <h3 style={{margin:"0 0 50px 0"}}>
+            Designer, speaker, podcaster and motivator</h3>
+          <BlogList pageContext={pageContext}/>
         </Layout>
       </div>
     </div>
