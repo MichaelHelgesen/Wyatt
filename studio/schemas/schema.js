@@ -16,6 +16,8 @@ import person from './person'
 import posts from "./posts"
 import quotes from './quotes'
 import work from './work'
+import blogInternalLinkBox from './blogInternalLinkBox'
+import youTubeLink from './youTubeLink'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -36,6 +38,8 @@ export default createSchema({
     podcast,
     portableTextDemo,
     quotes,
-    work
+    work,
+    blogInternalLinkBox,
+    youTubeLink
   ]),
 })
