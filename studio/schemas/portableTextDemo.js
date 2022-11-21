@@ -64,6 +64,12 @@ export default {
                         ]
                     }
                 },
+                {
+                    name: "bloglink",
+                    title: "Blogpost",
+                    type: 'reference',
+                    to: [{ type: 'post' }],
+                },
             ]
         }
     ],

@@ -90,7 +90,7 @@ const Page = ({ data, pageContext }) => {
             paddingBottom: "50px",
           }}
         >
-          {data.page.content ? (
+          {data.page._rawContent ? (
             <PortableText
               value={data.page._rawContent}
               components={serializers}

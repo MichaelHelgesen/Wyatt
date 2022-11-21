@@ -33,7 +33,7 @@ export const pageQuery = graphql`
   }
 `
 
-const BlogPage = ({ data, pageContext }) => {
+const PodcastPage = ({ data, pageContext }) => {
   console.log(data.allSanityDemotext)
   return (
     <div>
@@ -96,4 +96,4 @@ const BlogPage = ({ data, pageContext }) => {
   )
 }
 
-export default BlogPage
+export default PodcastPage
