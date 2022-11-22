@@ -28,11 +28,11 @@ export default () =>
       S.divider(),
       S.listItem()
         .title('Blogpost')
-        .schemaType('post')
+        .schemaType('blog')
         .child(
             S.documentList()
             .title('Blogpost')
-            .filter('_type == "post"')
+            .filter('_type == "blog"')
     ),
     S.listItem()
         .title('Podcast')
@@ -53,11 +53,11 @@ export default () =>
     ),
     S.listItem()
         .title('Event')
-        .schemaType('events')
+        .schemaType('event')
         .child(
             S.documentList()
             .title('Event')
-            .filter('_type == "events"')
+            .filter('_type == "event"')
     ),
     S.divider(),
     S.listItem()
@@ -87,7 +87,7 @@ export default () =>
     S.divider(),
       // Return rest of content list items, but filter out those already listed
       ...S.documentTypeListItems().filter(
-        (listItem) => !["menu", "post", "podcast", "events", "work", "demotext", "client", "person", "quote"].includes(listItem.getId())
+        (listItem) => !["menu", "blog", "podcast", "event", "work", "demotext", "client", "person", "quote"].includes(listItem.getId())
       ),
       S.divider(),
       S.listItem()

@@ -4,6 +4,11 @@
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
+## 22.11.22
+- Adding different **custom components to the rich text type**.
+- Finally figured out the Portable text plugin.
+## 21.11.22
+- Used a lot of time to try and understand the new **Portable Text React-plugin**, and write **custom components for it**. 
 ## 18.11.22
 - Added a more dynamic breadcrumb and slug using **Gatsbys pageContext**
 - **Added breadcrumbs**.

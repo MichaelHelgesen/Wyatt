@@ -7,7 +7,7 @@ const createSlug = string =>
 const EventList = () => {
   const data = useStaticQuery(graphql`
     query eventQuery {
-      allSanityEvents{
+      allSanityEvent{
         edges {
           node {
             _rawContent
@@ -19,7 +19,7 @@ const EventList = () => {
   `)
   return (
     <div>
-      {data.allSanityEvents.edges.map((post, index) => (
+      {data.allSanityEvent.edges.map((post, index) => (
          <Link to={post.node.slug ? (`${post.node.slug.current}`) : (`${createSlug(post.node.title)}`)} key={index} style={{textDecoration:"none"}}>
          <div
            key={index}

@@ -13,9 +13,6 @@ import Breadcrumb from "../components/breadcrumb"
 const createSlug = string =>
   string.toLowerCase().replace(/\s+/g, "-").slice(0, 200)
 
-
-
-
 export const pageQuery = graphql`
   query ($id: String!) {
     page: sanityPage(id: { eq: $id }) {
@@ -44,10 +41,8 @@ export const pageQuery = graphql`
   }
 `
 
-
-
 const Page = ({ data, pageContext }) => {
-    console.log(data)
+  console.log(data)
   return (
     <div>
       <Header />
@@ -57,7 +52,7 @@ const Page = ({ data, pageContext }) => {
           margin: "0 auto",
         }}
       >
-        <Breadcrumb pageContext={pageContext}/>
+        <Breadcrumb pageContext={pageContext} />
         <h1
           style={{
             textAlign: "left",
@@ -106,24 +101,39 @@ const Page = ({ data, pageContext }) => {
                 data.allSanityDemotext.edges[0].node._rawDemotext[0].content
               }
               components={{
-                block: {
-                  // Ex. 1: customizing common block types
-                  h1: ({children}) => <h1 className="text-2xl">{console.log(children)}{children}</h1>,
-                  blockquote: ({children}) => <blockquote className="border-l-purple-500">{console.log(children)}{children}</blockquote>,
-              
-                  // Ex. 2: rendering custom styles
-                  youtubeLink: ({children}) => (
-                    <h2 className="text-lg text-primary text-purple-700">{console.log(children)}{children}</h2>
-                  ),
-                },
+                block: {},
                 types: {
-                  // Ex. 1: customizing common block types
-                  reference: (props) => <h1 className="text-2xl">{console.log("children", props.value)}{props.value}øøøø</h1>,
-                  youtubeLink: (props) => <h1 className="text-2xl">{console.log("children", props.value.youTubeEmbed)}{props.value.youTubeEmbed}</h1>,
+                  youtubeLink: props => (
+                    <h1 className="text-2xl">{props.value.youTubeEmbed}</h1>
+                  ),
+                  blogInternalLink: props => {
+                    console.log(props)
+                    
+                    return (
+                      <a
+                        style={{
+                          border: "1px solid black",
+                          padding: "10px",
+                          display: "block",
+                        }}
+                        href={`${data.site.siteMetadata.siteUrl}${props.value.bloglink._type != "page" ? `/${props.value.bloglink._type}` : ""}/${props.value.bloglink.slug.current != "home" ? `${props.value.bloglink.slug.current}` : "" }`}
+                      >
+                        <h5 style={{ display: "block", margin: "0" }}>
+                          {props.value.bloglink.title}
+                        </h5>
+                        <span>{props.value.bloglink.description}</span>
+                      </a>
+                    )
+                  },
                 },
                 marks: {
-                  // Ex. 1: customizing common block types
-                  post: (props) => <h1 className="text-2xl">{console.log("children", props.value)}{props.value}øøøø</h1>,
+                  highlight: props => {
+                    return (
+                      <span style={{ backgroundColor: "yellow" }}>
+                        {props.text}
+                      </span>
+                    )
+                  },
                 },
               }}
             />

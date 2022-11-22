@@ -8,7 +8,7 @@ const BlogList = ({ pageContext }) => {
   console.log(pageContext)
   const data = useStaticQuery(graphql`
     query blogQuery {
-      allSanityPost(sort: {
+      allSanityBlog(sort: {
         fields: date,
         order: DESC
       }){
@@ -28,7 +28,7 @@ const BlogList = ({ pageContext }) => {
   `)
   return (
     <div>
-      {data.allSanityPost.edges.map((post, index) => (
+      {data.allSanityBlog.edges.map((post, index) => (
         <Link to={post.node.slug ? (`${post.node.slug.current}`) : (`${createSlug(post.node.title)}`)} key={index} style={{textDecoration:"none"}}>
         <div
           key={index}

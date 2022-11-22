@@ -67,10 +67,7 @@ export default {
           type: "youtubeLink"
         },
         {
-          name: "bloglink",
-          title: "Blogpost",
-          type: "reference",
-          to: [{ type: "post" }],
+          type: "blogInternalLink",
         },
       ],
     },

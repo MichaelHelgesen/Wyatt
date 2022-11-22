@@ -8,7 +8,7 @@ import Breadcrumb from "../components/breadcrumb"
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    post: sanityPost(id: { eq: $id }) {
+    blog: sanityBlog(id: { eq: $id }) {
       id
       introduction
       title
@@ -52,7 +52,7 @@ const BlogPage = ({ data, pageContext }) => {
             textAlign: "left",
           }}
         >
-          {data.post.title}
+          {data.blog.title}
         </h1>
         <div
           style={{
@@ -61,8 +61,8 @@ const BlogPage = ({ data, pageContext }) => {
             paddingBottom: "10px",
           }}
         >
-          {data.post.introduction ? (
-            <p>{data.post.introduction}</p>
+          {data.blog.introduction ? (
+            <p>{data.blog.introduction}</p>
           ) : (
             <PortableText
               value={
@@ -78,7 +78,7 @@ const BlogPage = ({ data, pageContext }) => {
             paddingBottom: "50px",
           }}
         >
-          {data.post.content ? (
+          {data.blog.content ? (
             <PortableText
               value={data.post._rawContent}
               components={serializers}

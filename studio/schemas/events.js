@@ -2,7 +2,7 @@ import { MdEventSeat } from "react-icons/md";
 
 export default {
   title: "Event",
-  name: "events",
+  name: "event",
   type: "document",
   icon: MdEventSeat,
   fields: [

@@ -20,7 +20,7 @@ exports.createPages = async function ({ actions, graphql }) {
           }
         }
       }
-      posts: allSanityPost {
+      blogs: allSanityBlog {
         edges {
           node {
             id
@@ -33,7 +33,7 @@ exports.createPages = async function ({ actions, graphql }) {
             title
           }
         }
-      },
+      }
       podcasts: allSanityPodcast {
         edges {
           node {
@@ -47,7 +47,7 @@ exports.createPages = async function ({ actions, graphql }) {
             title
           }
         }
-      },
+      }
       works: allSanityWork {
         edges {
           node {
@@ -62,7 +62,7 @@ exports.createPages = async function ({ actions, graphql }) {
           }
         }
       }
-      events: allSanityEvents {
+      events: allSanityEvent {
         edges {
           node {
             id
@@ -95,7 +95,7 @@ exports.createPages = async function ({ actions, graphql }) {
       titleAsSlug = createSlug(node.title)
       pathUrl = "/"
       pageComponent = require.resolve(`./src/templates/page.js`)
-    } else if (type == "SanityPost") {
+    } else if (type == "SanityBlog") {
       titleAsSlug = createSlug(node.title)
       pathUrl = "/blog/"
       pageComponent = require.resolve(`./src/templates/blog.js`)
@@ -107,9 +107,9 @@ exports.createPages = async function ({ actions, graphql }) {
       titleAsSlug = createSlug(node.title)
       pathUrl = "/work/"
       pageComponent = require.resolve(`./src/templates/work.js`)
-    } else if (type == "SanityEvents") {
+    } else if (type == "SanityEvent") {
       titleAsSlug = createSlug(node.title)
-      pathUrl = "/events/"
+      pathUrl = "/event/"
       pageComponent = require.resolve(`./src/templates/event.js`)
     }
     slug = !node.slug ? titleAsSlug : node.slug.current
@@ -129,7 +129,7 @@ exports.createPages = async function ({ actions, graphql }) {
     }
   })
   // Create blogposts
-  data.posts.edges.forEach(({ node }) => {
+  data.blogs.edges.forEach(({ node }) => {
     console.log("Creating blogpost: ", node.title)
     createPages(node)
   })

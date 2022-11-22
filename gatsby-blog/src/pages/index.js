@@ -7,7 +7,7 @@ import BlogList from "../components/blogList"
 
 export const pageQuery = graphql`
   query {
-    allSanityPost{
+    allSanityBlog{
       edges {
         node {
           title

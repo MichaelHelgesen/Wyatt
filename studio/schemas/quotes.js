@@ -47,7 +47,7 @@ export default {
             of: [
                 {
                     type: 'reference',
-                    to: [{ type: 'work' }, { type: 'events' }],
+                    to: [{ type: 'work' }, { type: 'event' }],
                     options: {
                         filter: ({ parent }) => {
                             const existingPerson = parent.map(item => {
