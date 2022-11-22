@@ -118,8 +118,12 @@ const Page = ({ data, pageContext }) => {
                 },
                 types: {
                   // Ex. 1: customizing common block types
-                  post: (props) => <h1 className="text-2xl">{console.log("children", props.value.youTubeEmbed)}ds</h1>,
-                  youtubeLink: (props) => <h1 className="text-2xl">{console.log("children", props.value.youTubeEmbed)}ds</h1>,
+                  reference: (props) => <h1 className="text-2xl">{console.log("children", props.value)}{props.value}øøøø</h1>,
+                  youtubeLink: (props) => <h1 className="text-2xl">{console.log("children", props.value.youTubeEmbed)}{props.value.youTubeEmbed}</h1>,
+                },
+                marks: {
+                  // Ex. 1: customizing common block types
+                  post: (props) => <h1 className="text-2xl">{console.log("children", props.value)}{props.value}øøøø</h1>,
                 },
               }}
             />
