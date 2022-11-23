@@ -63,7 +63,7 @@ const Page = ({ data, pageContext }) => {
         <div>
           {data.page.slug.current === "blog" && <BlogList />}
           {data.page.slug.current === "work" && <WorkList />}
-          {data.page.slug.current === "events" && <EventList />}
+          {data.page.slug.current === "event" && <EventList />}
           {data.page.slug.current === "podcast" && <PodcastList />}
         </div>
         <div
