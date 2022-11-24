@@ -4,7 +4,45 @@
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
+## 24.11.22
+- Added Gatsby Sanity Image plugin for responsive images and lazy loading.
+- Added image component to Portable text from Cloudinary, Unsplash and uploaded.
+- Added YouTube-component for Portable text.
+- Added icons for internal and external links.
+- Added components for internal and external links in Portable text.
+
 ## 23.11.22
+- Figured out why I did not get any results in custom types: it was not an object, only referances. The following code could not be targeted in portable type as "type":
+
+    ```javascript
+    export default {
+        name: "testModule",
+        title: "Podcast",
+        type: "reference",
+        to: [{ type: "podcast" }],
+    };
+    ```
+    Sanity say that "type" is Portable Text is:
+    > An object of React components that renders different types of objects that might appear both as part of the input array, or as inline objects within text blocks - eg alongside text spans.
+
+    So it has to be an object like this:
+
+    ```javascript
+    export default {
+        name: "podcastInternalLink",
+        type: "object",
+        title: "Link to podcast",
+        fields: [
+            {
+                name: "podcastModule",
+                title: "Podcast file",
+                type: "reference",
+                to: [{ type: "podcast" }],
+            },
+        ],
+    };
+    ```
+
 - Added **delete and change scripts** for manipulating the dataset.
 - Added the ability to add pages and lists in Portable text.
 

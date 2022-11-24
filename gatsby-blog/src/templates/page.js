@@ -9,6 +9,9 @@ import WorkList from "../components/workList"
 import EventList from "../components/eventList"
 import PodcastList from "../components/podcastList"
 import Breadcrumb from "../components/breadcrumb"
+import { MdSouthWest, MdNorthEast } from "react-icons/md"
+import getYouTubeId from "get-youtube-id"
+import SanityImage from "gatsby-plugin-sanity-image"
 
 const createSlug = string =>
   string.toLowerCase().replace(/\s+/g, "-").slice(0, 200)
@@ -103,9 +106,24 @@ const Page = ({ data, pageContext }) => {
               components={{
                 block: {},
                 types: {
-                  youtubeLink: props => (
-                    <h1 className="text-2xl">{props.value.youTubeEmbed}</h1>
-                  ),
+                  youtubeLink: props => {
+                    console.log(props)
+                    const id = getYouTubeId(props.value.youTubeEmbed)
+                    const url = `https://youtube.com/embed/${id}`
+                    return (
+                      <div>
+                        <iframe
+                          width="100%"
+                          height="400"
+                          src={`${url}`}
+                          title="YouTube video player"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    )
+                  },
                   blogInternalLink: props => {
                     return (
                       <a
@@ -131,6 +149,35 @@ const Page = ({ data, pageContext }) => {
                       </a>
                     )
                   },
+                  blogImage: props => {
+                    console.log(props)
+                    return (
+                      <div>
+                        <SanityImage
+                          // pass asset, hotspot, and crop fields
+                          {...props.value.image}
+                          // tell Sanity how large to make the image (does not set any CSS)
+                          width={300}
+                          height={Math.round(
+                            300 /
+                              props.value.image.asset.metadata.dimensions.aspectRatio
+                          )}
+                          alt={props.value.alt}
+                          //config={{blur:50}}
+                          // style it how you want it
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                        />
+                        {/* Image description */}
+                        <p>
+                          {props.value.description}
+                        </p>
+                      </div>
+                    )
+                  },
                   podcastInternalLink: props => {
                     console.log(props)
 
@@ -152,12 +199,29 @@ const Page = ({ data, pageContext }) => {
                       </span>
                     )
                   },
-                },
-                podcast: {
-                  podcast: props => {
+                  internalRegularLink: props => {
+                    console.log(props)
                     return (
-                      <span style={{ backgroundColor: "yellow" }}>
-                        ds
+                      <span>
+                        <a
+                          href={`${
+                            props.value.internalReference._type != "page"
+                              ? `/${props.value.internalReference._type}/${props.value.internalReference.slug.current}`
+                              : `/${props.value.internalReference.slug.current}`
+                          }`}
+                        >
+                          {props.text} <MdSouthWest />
+                        </a>
+                      </span>
+                    )
+                  },
+                  externalRegularLink: props => {
+                    console.log(props)
+                    return (
+                      <span>
+                        <a href={props.value.externalReference}>
+                          {props.text} <MdNorthEast />
+                        </a>
                       </span>
                     )
                   },

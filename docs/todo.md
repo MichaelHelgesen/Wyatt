@@ -88,16 +88,20 @@ The project is separated into the following main categories:
     - [x] Menu
         - [x] Create menu schema
         - [x] Create dynamic meny based on menu schema in sanity
-    - [ ] Rich text modules
-        - [ ] Work
-        - [ ] Client
-        - [ ] Podcast
-        - [ ] Event
-        - [ ] Person
-        - [ ] Other blog?
+    - [ ] Portable text modules
+        - [x] Work -> Internal link collection
+        - [x] Client -> Internal link collection
+        - [x] Podcast -> Internal link collection
+        - [x] Event -> Internal link collection
+        - [ ] ~~Person~~ (not pages)
+        - [x] Other blog? -> Internal link collection
         - [ ] Gallery from work?
         - [ ] Gallery from event?
-        - [ ] YouTube-embed
+        - [x] YouTube-embed
+        - [x] External link
+        - [x] Internal standard link
+        - [x] Embed podcast file from existing podcast post
+        - [ ] Image
 
 ## 3. Content
 - [ ] Teach the client how to use Sanity

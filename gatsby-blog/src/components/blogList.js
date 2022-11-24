@@ -4,8 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 const createSlug = string =>
     string.toLowerCase().replace(/\s+/g, "-").slice(0, 200)
 
-const BlogList = ({ pageContext }) => {
-  console.log(pageContext)
+const BlogList = () => {
   const data = useStaticQuery(graphql`
     query blogQuery {
       allSanityBlog(sort: {

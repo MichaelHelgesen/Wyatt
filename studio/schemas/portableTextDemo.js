@@ -1,7 +1,16 @@
 import React from "react";
+import { MdSouthWest, MdNorthEast } from 'react-icons/md'
 
 const highlightRender = (props) => (
   <span style={{ backgroundColor: "yellow" }}>{props.children}</span>
+);
+
+const internalLink = (props) => (
+  <span style={{ textDecoration:"underline" }}>{props.children} <MdSouthWest /></span>
+);
+
+const externalLink = (props) => (
+  <span style={{ textDecoration:"underline" }}>{props.children} <MdNorthEast /></span>
 );
 
 export default {
@@ -46,6 +55,22 @@ export default {
             { title: "Quote", value: "blockquote" },
           ],
           marks: {
+            annotations: [
+              {
+                type: "internalRegularLink",
+                blockEditor: {
+                  icon: MdSouthWest,
+                  render: internalLink,
+                },
+              },
+              {
+                type: "externalRegularLink",
+                blockEditor: {
+                  icon: MdNorthEast,
+                  render: externalLink,
+                },
+              },
+            ],
             decorators: [
               { title: "Strong", value: "strong" },
               { title: "Emphasis", value: "em" },
@@ -64,16 +89,16 @@ export default {
           },
         },
         {
-          type: "youtubeLink"
+          type: "blogImage",
+        },
+        {
+          type: "youtubeLink",
         },
         {
           type: "blogInternalLink",
         },
         {
-          type: "podcastInternalLink"
-        },
-        {
-          type: "testModule"
+          type: "podcastInternalLink",
         },
       ],
     },
