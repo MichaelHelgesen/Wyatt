@@ -69,6 +69,12 @@ export default {
         {
           type: "blogInternalLink",
         },
+        {
+          type: "podcastInternalLink"
+        },
+        {
+          type: "testModule"
+        },
       ],
     },
   ],

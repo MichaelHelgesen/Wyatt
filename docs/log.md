@@ -4,6 +4,10 @@
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
+## 23.11.22
+- Added **delete and change scripts** for manipulating the dataset.
+- Added the ability to add pages and lists in Portable text.
+
 ## 22.11.22
 - Adding different **custom components to the rich text type**.
 - Finally figured out the Portable text plugin.

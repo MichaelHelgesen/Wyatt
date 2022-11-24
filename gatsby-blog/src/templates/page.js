@@ -42,7 +42,7 @@ export const pageQuery = graphql`
 `
 
 const Page = ({ data, pageContext }) => {
-  console.log(data)
+  console.log(data.allSanityDemotext.edges[0].node._rawDemotext[0].content)
   return (
     <div>
       <Header />
@@ -107,8 +107,6 @@ const Page = ({ data, pageContext }) => {
                     <h1 className="text-2xl">{props.value.youTubeEmbed}</h1>
                   ),
                   blogInternalLink: props => {
-                    console.log(props)
-                    
                     return (
                       <a
                         style={{
@@ -116,7 +114,15 @@ const Page = ({ data, pageContext }) => {
                           padding: "10px",
                           display: "block",
                         }}
-                        href={`${data.site.siteMetadata.siteUrl}${props.value.bloglink._type != "page" ? `/${props.value.bloglink._type}` : ""}/${props.value.bloglink.slug.current != "home" ? `${props.value.bloglink.slug.current}` : "" }`}
+                        href={`${data.site.siteMetadata.siteUrl}${
+                          props.value.bloglink._type != "page"
+                            ? `/${props.value.bloglink._type}`
+                            : ""
+                        }/${
+                          props.value.bloglink.slug.current != "home"
+                            ? `${props.value.bloglink.slug.current}`
+                            : ""
+                        }`}
                       >
                         <h5 style={{ display: "block", margin: "0" }}>
                           {props.value.bloglink.title}
@@ -125,12 +131,33 @@ const Page = ({ data, pageContext }) => {
                       </a>
                     )
                   },
+                  podcastInternalLink: props => {
+                    console.log(props)
+
+                    return (
+                      <audio controls>
+                        <source
+                          src={props.value.podcastModule.podcast.url}
+                          type={"audio/ogg"}
+                        />
+                      </audio>
+                    )
+                  },
                 },
                 marks: {
                   highlight: props => {
                     return (
                       <span style={{ backgroundColor: "yellow" }}>
                         {props.text}
+                      </span>
+                    )
+                  },
+                },
+                podcast: {
+                  podcast: props => {
+                    return (
+                      <span style={{ backgroundColor: "yellow" }}>
+                        ds
                       </span>
                     )
                   },
