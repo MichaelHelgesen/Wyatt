@@ -4,6 +4,55 @@
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
+## 28.11.22
+- Is there a way to reset child components based on changes in parent?
+- Added demotext schemas for blog and work to display their unique content.
+- Added the ability to link to client on work, and **based on client display connected persons**.
+    ```javascript
+    {
+      description: "client and contact person",
+      name: "clientAndContact",
+      type: "object",
+      fields: [
+        {
+          type: "reference",
+          name: "clientList",
+          to: [{ type: "client" }],
+          /* options: {
+            filter: ({ parent }) => {
+              const existingClient = parent.clientList.map((item) => {
+                return item._ref;
+              });
+              return {
+                filter: "_id in $ref == false",
+                params: {
+                  ref: existingClient,
+                },
+              };
+            },
+          }, */
+        },
+        {
+          type: "reference",
+          name:"personList",
+          to: [{ type: "person"}],
+          hidden: ({document}) => !document?.clientAndContact,
+          options: {
+            filter: ({ parent }) => {
+              const existingClient = parent.clientList._ref;
+              return {
+                filter: "client[0]._ref == $ref",
+                params: {
+                  ref: existingClient,
+                },
+              };
+            },
+          },
+        }
+      ],
+    },
+    ```
+
 ## 24.11.22
 - Added Gatsby Sanity Image plugin for responsive images and lazy loading.
 - Added image component to Portable text from Cloudinary, Unsplash and uploaded.

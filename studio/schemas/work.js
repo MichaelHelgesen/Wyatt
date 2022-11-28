@@ -31,6 +31,48 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      description: "client and contact person",
+      name: "clientAndContact",
+      type: "object",
+      fields: [
+        {
+          type: "reference",
+          name: "clientList",
+          to: [{ type: "client" }],
+          /* options: {
+            filter: ({ parent }) => {
+              const existingClient = parent.clientList.map((item) => {
+                return item._ref;
+              });
+              return {
+                filter: "_id in $ref == false",
+                params: {
+                  ref: existingClient,
+                },
+              };
+            },
+          }, */
+        },
+        {
+          type: "reference",
+          name:"personList",
+          to: [{ type: "person"}],
+          hidden: ({document}) => !document?.clientAndContact,
+          options: {
+            filter: ({ parent }) => {
+              const existingClient = parent.clientList._ref;
+              return {
+                filter: "client[0]._ref == $ref",
+                params: {
+                  ref: existingClient,
+                },
+              };
+            },
+          },
+        }
+      ],
+    },
+    {
       description:
         "Choose a client from the Client category or create a new one",
       name: "client",
@@ -66,7 +108,7 @@ export default {
     },
     {
       description: "A preview image",
-      type: "blogPostImage",
+      type: "blogImage",
       name: "image",
     },
     {

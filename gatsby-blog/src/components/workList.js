@@ -12,6 +12,7 @@ const WorkList = () => {
           node {
             _rawContent
             title
+            description
           }
         }
       }

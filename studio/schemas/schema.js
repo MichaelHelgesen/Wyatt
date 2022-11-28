@@ -3,6 +3,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
+import blogDemo from './blogDemo'
 import blogImage from './blogImage'
 import blogInternalLinkBox from './blogInternalLinkBox'
 import blogPostImage from './blogPostImage'
@@ -21,6 +22,7 @@ import person from './person'
 import posts from "./posts"
 import quotes from './quotes'
 import work from './work'
+import workDemo from './workDemo'
 import youTubeLink from './youTubeLink'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -48,6 +50,8 @@ export default createSchema({
     posts,
     quotes,
     work,
-    youTubeLink
+    youTubeLink,
+    blogDemo,
+    workDemo
   ]),
 })

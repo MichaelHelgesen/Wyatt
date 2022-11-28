@@ -29,7 +29,7 @@ export default {
         {
             description: "A logo image",
             title: 'Logo',
-            type: 'blogPostImage',
+            type: 'blogImage',
             name: "image"
         },
         {

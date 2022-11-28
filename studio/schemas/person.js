@@ -42,7 +42,7 @@ export default {
             of: [
                 {
                     type: 'reference',
-                    to: [{ type: 'person' }],
+                    to: [{ type: 'client' }],
                     options: {
                         filter: ({ parent }) => {
                             const existingClient = parent.map(item => {

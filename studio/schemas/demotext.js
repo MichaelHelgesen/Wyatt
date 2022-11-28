@@ -11,7 +11,7 @@ export default {
       name: "demotext",
       title: "Demotexts",
       type: "array",
-      of: [{ type: "portableTextDemo" }]
+      of: [{ type: "portableTextDemo" }, { type: "blogDemo" }, { type: "workDemo"}]
     },
   ],
 };

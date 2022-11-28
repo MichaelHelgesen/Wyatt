@@ -42,7 +42,7 @@ export default {
         },
         {
             description: "An image for the blog preview",
-            type: 'blogPostImage',
+            type: 'blogImage',
             name: "image"
         },
         {
