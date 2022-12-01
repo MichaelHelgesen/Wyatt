@@ -12,6 +12,7 @@ import Breadcrumb from "../components/breadcrumb"
 import { MdSouthWest, MdNorthEast } from "react-icons/md"
 import getYouTubeId from "get-youtube-id"
 import SanityImage from "gatsby-plugin-sanity-image"
+import ImageGallery from "../components/imageGallery"
 
 const createSlug = string =>
   string.toLowerCase().replace(/\s+/g, "-").slice(0, 200)
@@ -190,6 +191,10 @@ const Page = ({ data, pageContext }) => {
                       </audio>
                     )
                   },
+                  imageGallery: props => {
+                    console.log(props);
+                    return(<ImageGallery props={props.value.cloudinaryList} />)
+                  }
                 },
                 marks: {
                   highlight: props => {

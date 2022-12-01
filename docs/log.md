@@ -4,8 +4,13 @@
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
+## 30.11.22
+- Added image gallery to work pages.
+- Added boolean for choosing payed or personal project.
+- Updated work pages to the new client and person schema.
+
 ## 28.11.22
-- Is there a way to reset child components based on changes in parent?
+- **Is there a way to reset child components based on changes in parent?**
 - Added demotext schemas for blog and work to display their unique content.
 - Added the ability to link to client on work, and **based on client display connected persons**.
     ```javascript

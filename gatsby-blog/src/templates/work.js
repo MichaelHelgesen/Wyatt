@@ -8,6 +8,7 @@ import Breadcrumb from "../components/breadcrumb"
 import { MdSouthWest, MdNorthEast } from "react-icons/md"
 import getYouTubeId from "get-youtube-id"
 import SanityImage from "gatsby-plugin-sanity-image"
+import ImageGallery from "../components/imageGallery"
 
 export const pageQuery = graphql`
   query ($id: String!) {
@@ -30,23 +31,32 @@ export const pageQuery = graphql`
       }
       introduction
       title
-      client {
-        name
-        webpage
-        image {
-          alt
-          description
+      ClientAndContact {
+        status
+        clientList {
+          name
+          webpage
           image {
-            asset {
-              _id
-              metadata {
-                dimensions {
-                  aspectRatio
+            alt
+            description
+            image {
+              asset {
+                _id
+                metadata {
+                  dimensions {
+                    aspectRatio
+                  }
                 }
               }
             }
           }
         }
+        personList {
+          firstName
+        }
+      }
+      cloudinaryList {
+        url
       }
       content {
         _rawChildren
@@ -67,7 +77,11 @@ export const pageQuery = graphql`
       }
     }
     person: allSanityPerson(
-      filter: {client: {elemMatch: {_id: {eq: "7f57bbe0-5054-4cee-a9fd-72e7b410a525"}}}}
+      filter: {
+        client: {
+          elemMatch: { _id: { eq: "7f57bbe0-5054-4cee-a9fd-72e7b410a525" } }
+        }
+      }
     ) {
       edges {
         node {
@@ -109,64 +123,69 @@ const WorkPage = ({ data, pageContext }) => {
         >
           Delivered: {data.work.date}
         </small>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row-reverse",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            padding: "5px",
-            background: "#eee",
-          }}
-        >
+        {!data.work.ClientAndContact.status ? <p style={{
+              padding: "5px",
+              background: "#eee",
+            }}>personal</p> : null }
+        {data.work.ClientAndContact.clientList && data.work.ClientAndContact.status ? (
           <div
             style={{
-              flex: "1",
+              display: "flex",
+              flexDirection: "row-reverse",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              padding: "5px",
+              background: "#eee",
             }}
           >
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
+                flex: "1",
               }}
             >
-              <div>
-                {data.work.client[0].name}
-                <br />
-                
-              </div>
-              <a href={data.work.client[0].webpage}>visit</a>
-            </div>
-          </div>
-          {data.work.client[0].image ? (
-            <div
-              style={{
-                marginRight: "10px",
-              }}
-            >
-              <SanityImage
-                // pass asset, hotspot, and crop fields
-                {...data.work.client[0].image.image}
-                // tell Sanity how large to make the image (does not set any CSS)
-                width={300}
-                height={Math.round(
-                  300 /
-                    data.work.client[0].image.image.asset.metadata.dimensions
-                      .aspectRatio
-                )}
-                alt={data.work.image.alt}
-                //config={{blur:50}}
-                // style it how you want it
+              <div
                 style={{
-                  width: "30px",
-                  height: "30px",
-                  objectFit: "cover",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
                 }}
-              />
+              >
+                <div>
+                  {data.work.ClientAndContact.clientList.name}{data.work.ClientAndContact.personList ?<small> - {data.work.ClientAndContact.personList.firstName}</small>: null }
+                  <br />
+                </div>
+                <a href={data.work.ClientAndContact.clientList.webpage}>visit</a>
+              </div>
             </div>
-          ) : null}
-        </div>
+            {data.work.ClientAndContact.clientList.image ? (
+              <div
+                style={{
+                  marginRight: "10px",
+                }}
+              >
+                <SanityImage
+                  // pass asset, hotspot, and crop fields
+                  {...data.work.ClientAndContact.clientList.image.image}
+                  // tell Sanity how large to make the image (does not set any CSS)
+                  width={300}
+                  height={Math.round(
+                    300 /
+                      data.work.ClientAndContact.clientList.image.image.asset.metadata.dimensions
+                        .aspectRatio
+                  )}
+                  alt={data.work.ClientAndContact.clientList.image.image}
+                  //config={{blur:50}}
+                  // style it how you want it
+                  style={{
+                    width: "30px",
+                    height: "30px",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+            ) : null}
+          </div>
+        ) : null}
         {data.work.image ? (
           <div>
             <SanityImage
@@ -229,6 +248,11 @@ const WorkPage = ({ data, pageContext }) => {
               components={serializers}
             />
           )}
+        </div>
+        <div>
+          {data.work.cloudinaryList.length ? 
+            <ImageGallery props={data.work.cloudinaryList}/>
+           : null }
         </div>
       </div>
       <Footer />

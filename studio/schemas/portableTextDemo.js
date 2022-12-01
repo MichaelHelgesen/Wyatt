@@ -100,6 +100,9 @@ export default {
         {
           type: "podcastInternalLink",
         },
+        {
+          type: "imageGallery"
+        }
       ],
     },
   ],

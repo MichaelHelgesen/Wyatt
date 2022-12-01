@@ -7,10 +7,12 @@ import blogDemo from './blogDemo'
 import blogImage from './blogImage'
 import blogInternalLinkBox from './blogInternalLinkBox'
 import blogPostImage from './blogPostImage'
+import clientAndContact from './clientAndContact'
 import clients from './clients'
 import demotext from './demotext'
 import events from './events'
 import externalRegularLink from './externalRegularLink'
+import cloudinaryGallery from './cloudinaryGallery'
 import internalRegularLink from './internalRegularLink'
 import menu from './menu'
 import pages from './pages'
@@ -52,6 +54,8 @@ export default createSchema({
     work,
     youTubeLink,
     blogDemo,
-    workDemo
+    workDemo,
+    clientAndContact,
+    cloudinaryGallery
   ]),
 })
