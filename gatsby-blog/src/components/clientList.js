@@ -4,24 +4,23 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 const createSlug = string =>
     string.toLowerCase().replace(/\s+/g, "-").slice(0, 200)
 
-const EventList = () => {
+const ClientList = () => {
   const data = useStaticQuery(graphql`
-    query eventsQuery {
-      allSanityEvent{
+    query clientQuery {
+      allSanityClient{
         edges {
           node {
             _rawContent
-            title
+            name
           }
         }
       }
     }
   `)
-  console.log("eventlist", data)
   return (
     <div>
-      {data.allSanityEvent.edges.map((post, index) => (
-         <Link to={post.node.slug ? (`${post.node.slug.current}`) : (`${createSlug(post.node.title)}`)} key={index} style={{textDecoration:"none"}}>
+      {data.allSanityClient.edges.map((post, index) => (
+         <Link to={post.node.slug ? (`${post.node.slug.current}`) : (`${createSlug(post.node.name)}`)} key={index} style={{textDecoration:"none"}}>
          <div
            key={index}
            style={{ 
@@ -36,7 +35,7 @@ const EventList = () => {
                textDecoration: "none"
              }}
            >
-             {post.node.title}
+             {post.node.name}
            </h4>
            <p style={{margin:"0", color:"black"}}>
              {post.node.description}
@@ -48,4 +47,4 @@ const EventList = () => {
   )
 }
 
-export default EventList
+export default ClientList

@@ -4,6 +4,11 @@
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
+## 14.12.22
+- Working on including quotes, persons, work and events related to the respective client. Need to filter graphQL, or use static query?
+- Added clients as page and a list of client pages.
+
+
 ## 30.11.22
 - Added image gallery to work pages.
 - Added boolean for choosing payed or personal project.

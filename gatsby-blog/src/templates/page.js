@@ -5,6 +5,7 @@ import serializers from "../components/serializers"
 import { PortableText } from "@portabletext/react"
 import Footer from "../components/footer"
 import BlogList from "../components/blogList"
+import ClientList from "../components/clientList"
 import WorkList from "../components/workList"
 import EventList from "../components/eventList"
 import PodcastList from "../components/podcastList"
@@ -46,6 +47,7 @@ export const pageQuery = graphql`
 `
 
 const Page = ({ data, pageContext }) => {
+  console.log("SLUG", data.page.slug.current)
   console.log(data.allSanityDemotext.edges[0].node._rawDemotext[0].content)
   return (
     <div>
@@ -69,6 +71,7 @@ const Page = ({ data, pageContext }) => {
           {data.page.slug.current === "work" && <WorkList />}
           {data.page.slug.current === "event" && <EventList />}
           {data.page.slug.current === "podcast" && <PodcastList />}
+          {data.page.slug.current === "clients" && <ClientList />}
         </div>
         <div
           style={{

@@ -62,6 +62,20 @@ exports.createPages = async function ({ actions, graphql }) {
           }
         }
       }
+      clients: allSanityClient {
+        edges {
+          node {
+            id
+            internal {
+              type
+            }
+            slug {
+              current
+            }
+            name
+          }
+        }
+      }
       events: allSanityEvent {
         edges {
           node {
@@ -111,6 +125,10 @@ exports.createPages = async function ({ actions, graphql }) {
       titleAsSlug = createSlug(node.title)
       pathUrl = "/event/"
       pageComponent = require.resolve(`./src/templates/event.js`)
+    } else if (type == "SanityClient") {
+      titleAsSlug = createSlug(node.name)
+      pathUrl = "/clients/"
+      pageComponent = require.resolve(`./src/templates/client.js`)
     }
     slug = !node.slug ? titleAsSlug : node.slug.current
 
@@ -146,6 +164,11 @@ exports.createPages = async function ({ actions, graphql }) {
   // Create event posts
   data.events.edges.forEach(({ node }) => {
     console.log("Creating event post: ", node.title)
+    createPages(node)
+  })
+  // Create client posts
+  data.clients.edges.forEach(({ node }) => {
+    console.log("Creating client post: ", node.name)
     createPages(node)
   })
 }
