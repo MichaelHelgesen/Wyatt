@@ -50,7 +50,7 @@ export const pageQuery = graphql`
     person: allSanityPerson(
       filter: {
         client: {
-          elemMatch: { _key: { eq: "161a9f8d-5ad3-4cbd-8002-a65bc75bfc1c" } }
+          elemMatch: { _ref: { eq: "161a9f8d-5ad3-4cbd-8002-a65bc75bfc1c" } }
         }
       }
     ) {
@@ -69,6 +69,7 @@ export const pageQuery = graphql`
 
 const ClientPage = ({ data, pageContext }) => {
   console.log("person", data.person)
+  console.log("person", pageContext)
   return (
     <div>
       <Header />
