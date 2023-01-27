@@ -20,7 +20,7 @@ const createSlug = string =>
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    page: sanityPage(id: { eq: $id }) {
+    page: sanityPage(_id: { eq: $id }) {
       id
       introduction
       slug {
@@ -70,7 +70,7 @@ const Page = ({ data, pageContext }) => {
           {data.page.slug.current === "blog" && <BlogList />}
           {data.page.slug.current === "work" && <WorkList />}
           {data.page.slug.current === "event" && <EventList />}
-          {data.page.slug.current === "podcast" && <PodcastList />}
+          {data.page.slug.current === "podcasts" && <PodcastList />}
           {data.page.slug.current === "clients" && <ClientList />}
         </div>
         <div

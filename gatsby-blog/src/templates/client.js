@@ -12,7 +12,7 @@ import ImageGallery from "../components/imageGallery"
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    client: sanityClient(id: { eq: $id }) {
+    client: sanityClient(_id: { eq: $id }) {
       id
       name
       image {
@@ -50,7 +50,7 @@ export const pageQuery = graphql`
     person: allSanityPerson(
       filter: {
         client: {
-          elemMatch: { _ref: { eq: "161a9f8d-5ad3-4cbd-8002-a65bc75bfc1c" } }
+          elemMatch: { _id: { eq: $id } }
         }
       }
     ) {
@@ -64,12 +64,26 @@ export const pageQuery = graphql`
         }
       }
     }
+    work: allSanityWork(filter: {ClientAndContact: {clientList: {_id: {eq: $id}}}}){
+      edges {
+        node {
+          title
+        }
+      }
+    }
+    event: allSanityEvent(filter: {client: {elemMatch: {_id: {eq: "er"}}}}) {
+      edges {
+        node {
+          title
+        }
+      }
+    }
   }
 `
 
 const ClientPage = ({ data, pageContext }) => {
-  console.log("person", data.person)
-  console.log("person", pageContext)
+  console.log(data.person)
+  console.log(data.work)
   return (
     <div>
       <Header />
@@ -111,6 +125,29 @@ const ClientPage = ({ data, pageContext }) => {
             <small>{data.client.image.description}</small>
           </div>
         ) : null}
+        Persons: <small>
+          {
+            data.person.edges.map(el => {
+              return <span>{el.node.firstName},</span>
+            })
+          }
+        </small>
+        <br/>
+        Work: <small>
+          {
+            data.work.edges.map(el => {
+              return <span>{el.node.title},</span>
+            })
+          }
+        </small>
+        <br/>
+        Events: <small>
+          {
+            data.event.edges.map(el => {
+              return <span>{el.node.title},</span>
+            })
+          }
+        </small>
         <div
           style={{
             fontWeight: "bold",

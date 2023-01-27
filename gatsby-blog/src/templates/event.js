@@ -8,7 +8,7 @@ import Breadcrumb from "../components/breadcrumb"
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    event: sanityEvent(id: { eq: $id }) {
+    event: sanityEvent(_id: { eq: $id }) {
       id
       introduction
       title

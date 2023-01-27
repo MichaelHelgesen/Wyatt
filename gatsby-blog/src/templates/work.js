@@ -12,7 +12,7 @@ import ImageGallery from "../components/imageGallery"
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    work: sanityWork(id: { eq: $id }) {
+    work: sanityWork(_id: { eq: $id }) {
       date(formatString: "YYYY MM DD")
       id
       image {
@@ -73,23 +73,6 @@ export const pageQuery = graphql`
       edges {
         node {
           _rawDemotext(resolveReferences: { maxDepth: 10 })
-        }
-      }
-    }
-    person: allSanityPerson(
-      filter: {
-        client: {
-          elemMatch: { _id: { eq: "8180324c-1007-489f-9e27-22dbd466ec09" } }
-        }
-      }
-    ) {
-      edges {
-        node {
-          firstName
-          client {
-            id
-            name
-          }
         }
       }
     }

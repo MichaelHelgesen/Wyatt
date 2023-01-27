@@ -8,10 +8,19 @@ import Breadcrumb from "../components/breadcrumb"
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    podcast: sanityPodcast(id: { eq: $id }) {
+    podcast: sanityPodcast(_id: { eq: $id }) {
       id
       introduction
       title
+      length
+      guests {
+        firstName
+        lastName
+      }
+      date
+      podcast {
+        url
+      }
       content {
         _rawChildren
       }
@@ -44,7 +53,7 @@ const PodcastPage = ({ data, pageContext }) => {
           margin: "0 auto",
         }}
       >
-        <Breadcrumb pageContext={pageContext}/>
+        <Breadcrumb pageContext={pageContext} />
         <h1
           style={{
             textAlign: "left",
@@ -52,6 +61,22 @@ const PodcastPage = ({ data, pageContext }) => {
         >
           {data.podcast.title}
         </h1>
+        <audio controls>
+          <source
+            src={data.podcast.podcast.url}
+            type={"audio/ogg"}
+          />
+        </audio>
+        <br />
+        Release date:
+        <small>{data.podcast.date}</small>
+        <br />
+        Guest(s):
+        <small>
+          {data.podcast.guests.map(node => {
+            return <span>{node.firstName}, </span>
+          })}
+        </small>
         <div
           style={{
             fontWeight: "bold",

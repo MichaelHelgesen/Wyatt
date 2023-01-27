@@ -9,7 +9,7 @@ exports.createPages = async function ({ actions, graphql }) {
       pages: allSanityPage {
         edges {
           node {
-            id
+            _id
             internal {
               type
             }
@@ -23,7 +23,7 @@ exports.createPages = async function ({ actions, graphql }) {
       blogs: allSanityBlog {
         edges {
           node {
-            id
+            _id
             internal {
               type
             }
@@ -37,7 +37,7 @@ exports.createPages = async function ({ actions, graphql }) {
       podcasts: allSanityPodcast {
         edges {
           node {
-            id
+            _id
             internal {
               type
             }
@@ -51,7 +51,7 @@ exports.createPages = async function ({ actions, graphql }) {
       works: allSanityWork {
         edges {
           node {
-            id
+            _id
             internal {
               type
             }
@@ -65,7 +65,7 @@ exports.createPages = async function ({ actions, graphql }) {
       clients: allSanityClient {
         edges {
           node {
-            id
+            _id
             internal {
               type
             }
@@ -79,7 +79,7 @@ exports.createPages = async function ({ actions, graphql }) {
       events: allSanityEvent {
         edges {
           node {
-            id
+            _id
             internal {
               type
             }
@@ -97,7 +97,7 @@ exports.createPages = async function ({ actions, graphql }) {
     string.toLowerCase().replace(/\s+/g, "-").slice(0, 200)
 
   const createPages = node => {
-    let id = node.id
+    let id = node._id
     let titleAsSlug
     let slug
     let pathUrl
@@ -115,7 +115,7 @@ exports.createPages = async function ({ actions, graphql }) {
       pageComponent = require.resolve(`./src/templates/blog.js`)
     } else if (type == "SanityPodcast") {
       titleAsSlug = createSlug(node.title)
-      pathUrl = "/podcast/"
+      pathUrl = "/podcasts/"
       pageComponent = require.resolve(`./src/templates/podcast.js`)
     } else if (type == "SanityWork") {
       titleAsSlug = createSlug(node.title)
@@ -135,7 +135,7 @@ exports.createPages = async function ({ actions, graphql }) {
     createPage({
       path: `${pathUrl}${slug}`,
       component: pageComponent,
-      context: { id, type, pathUrl, slug },
+      context: { id, type, pathUrl, slug},
     })
   }
 

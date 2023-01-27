@@ -11,7 +11,7 @@ import SanityImage from "gatsby-plugin-sanity-image"
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    blog: sanityBlog(id: { eq: $id }) {
+    blog: sanityBlog(_id: { eq: $id }) {
       date(formatString: "YYYY MMM DD")
       id
       image {

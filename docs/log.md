@@ -4,6 +4,22 @@
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
+## 27.01.23
+- Fikk etablert alle relevante referanser fra ulike sider.
+- Endelig fikk jeg til å filtrere referanser basert på id til siden. Jeg hadde blandet *id* og *_id* som er en vesentlig forskjell. *id* er IDen til noden opprettet i gatsbyNode, mens *_id* er IDen til selve objektet i Sanity. Det er denne som må matches med andre objekters *_id*. 
+```javascript
+  clients: allSanityClient {
+    edges {
+      node {
+       id
+       _id
+      }
+    }
+  }
+
+  let id = node.id
+  let id2 = node._id
+```
 ## 14.12.22
 - Working on including quotes, persons, work and events related to the respective client. Need to filter graphQL, or use static query?
 - Added clients as page and a list of client pages.
