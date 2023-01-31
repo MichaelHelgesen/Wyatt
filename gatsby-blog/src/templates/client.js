@@ -71,7 +71,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    event: allSanityEvent(filter: {client: {elemMatch: {_id: {eq: "er"}}}}) {
+    event: allSanityEvent(filter: {client: {elemMatch: {_id: {eq: $id}}}}) {
       edges {
         node {
           title

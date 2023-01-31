@@ -14,7 +14,8 @@
     "@sanity/desk-tool",
     "cloudinary",
     "asset-source-unsplash",
-    "asset-source-cloudinary"
+    "asset-source-cloudinary",
+    "@sanity/production-preview"
   ],
   "env": {
     "development": {

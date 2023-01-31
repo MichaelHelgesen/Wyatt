@@ -33,7 +33,7 @@ const BlogIndex = ({ data, pageContext }) => {
             </h1>
           <h3 style={{margin:"0 0 50px 0"}}>
             Designer, speaker, podcaster and motivator</h3>
-          <BlogList pageContext={pageContext}/>
+          <BlogList pageContext={"index"}/>
         </Layout>
       </div>
     </div>

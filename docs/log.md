@@ -4,6 +4,50 @@
 A bullet list of different tasks done from day to day.
 **Bolded** text is a reminder to my self that the topic would make a good blogpost on my webpage.
 
+## 31.01.23
+- Gave up on filtering as described below. Solved it by changing the Sanity schema.
+- Added the ability to change slug in lists based on it´s location. If it´s on the index page, "/blog/" or similar is added. 
+
+## 30.01.23
+Finner ikke ut av hvordan jeg kan filtrere referanser i graphQL. Det er ikke mulig å filtrere på "... on Sanity...".
+```graphql
+query MyQuery {
+  allSanityQuote {
+    edges {
+      node {
+        work {
+          ... on SanityEvent {
+            id
+            _id
+          }
+          ... on SanityWork {
+            id
+            _id
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Slet med å vise **referanser i forhåndsvisningen** i Sanity (preview). Fant ut at jeg måtte bruke dot-notasjon.
+```javascript
+preview: {
+    select: {
+      quote: "quote",
+      firstName: "person.firstName",
+      lastName: "person.lastName",
+    },
+    prepare(selection) {
+      const { quote, firstName, lastName } = selection;
+      return {
+        title: `${quote}`,
+        subtitle: `${firstName} ${lastName}`,
+      };
+    },
+  },
+```
 ## 27.01.23
 - Fikk etablert alle relevante referanser fra ulike sider.
 - Endelig fikk jeg til å filtrere referanser basert på id til siden. Jeg hadde blandet *id* og *_id* som er en vesentlig forskjell. *id* er IDen til noden opprettet i gatsbyNode, mens *_id* er IDen til selve objektet i Sanity. Det er denne som må matches med andre objekters *_id*. 

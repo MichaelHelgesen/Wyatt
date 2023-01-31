@@ -30,10 +30,26 @@ export const pageQuery = graphql`
         }
       }
     }
+    quotes: allSanityQuote(filter: {event: {elemMatch: {_id: {eq: $id}}}}) {
+      edges {
+        node {
+          quote
+          event {
+            _id
+          }
+          person {
+            firstName
+            lastName
+            title
+          }
+        }
+      }
+    }
   }
 `
 
 const EventPosts = ({ data, pageContext }) => {
+  console.log(data.quote)
   return (
     <div>
       <Header />
@@ -58,6 +74,13 @@ const EventPosts = ({ data, pageContext }) => {
             paddingBottom: "10px",
           }}
         >
+          <div>
+          {data.quotes.edges.map(el => {
+            return (
+              <p>{`"${el.node.quote}" - ${el.node.person.firstName} ${el.node.person.lastName} ${el.node.person.title}`}</p>
+            )
+          })}
+        </div>
           {data.event.introduction ? (
             <p>{data.event.introduction}</p>
           ) : (

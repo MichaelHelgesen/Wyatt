@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 const createSlug = string =>
     string.toLowerCase().replace(/\s+/g, "-").slice(0, 200)
 
-const BlogList = () => {
+const BlogList = (pageContext) => {
   const data = useStaticQuery(graphql`
     query blogQuery {
       allSanityBlog(sort: {
@@ -27,8 +27,15 @@ const BlogList = () => {
   `)
   return (
     <div>
-      {data.allSanityBlog.edges.map((post, index) => (
-        <Link to={post.node.slug ? (`${post.node.slug.current}`) : (`${createSlug(post.node.title)}`)} key={index} style={{textDecoration:"none"}}>
+      {data.allSanityBlog.edges.map((post, index) => {
+        let slug
+        slug = post.node.slug ? post.node.slug.current : createSlug(post.node.title)
+        if(pageContext) {
+          console.log("pagecontext is set")
+          slug = `/blog/${slug}`
+        }
+        return (
+        <Link to={slug} key={index} style={{textDecoration:"none"}}>
         <div
           key={index}
           style={{  
@@ -50,7 +57,9 @@ const BlogList = () => {
           </p>
         </div>
         </Link>
-      ))}
+      )
+    }
+      )}
     </div>
   )
 }

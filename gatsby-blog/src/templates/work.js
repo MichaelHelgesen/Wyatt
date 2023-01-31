@@ -76,11 +76,28 @@ export const pageQuery = graphql`
         }
       }
     }
+    quotes: allSanityQuote(
+      filter: { work: { elemMatch: { _id: { eq: $id } } } }
+    ) {
+      edges {
+        node {
+          quote
+          work {
+            _id
+          }
+          person {
+            firstName
+            lastName
+            title
+          }
+        }
+      }
+    }
   }
 `
 
 const WorkPage = ({ data, pageContext }) => {
-  console.log(data.person)
+  console.log(data.quotes)
   console.log(pageContext)
   return (
     <div>
@@ -107,11 +124,18 @@ const WorkPage = ({ data, pageContext }) => {
         >
           Delivered: {data.work.date}
         </small>
-        {!data.work.ClientAndContact.status ? <p style={{
+        {!data.work.ClientAndContact.status ? (
+          <p
+            style={{
               padding: "5px",
               background: "#eee",
-            }}>personal</p> : null }
-        {data.work.ClientAndContact.clientList && data.work.ClientAndContact.status ? (
+            }}
+          >
+            personal
+          </p>
+        ) : null}
+        {data.work.ClientAndContact.clientList &&
+        data.work.ClientAndContact.status ? (
           <div
             style={{
               display: "flex",
@@ -135,10 +159,18 @@ const WorkPage = ({ data, pageContext }) => {
                 }}
               >
                 <div>
-                  {data.work.ClientAndContact.clientList.name}{data.work.ClientAndContact.personList ?<small> - {data.work.ClientAndContact.personList.firstName}</small>: null }
+                  {data.work.ClientAndContact.clientList.name}
+                  {data.work.ClientAndContact.personList ? (
+                    <small>
+                      {" "}
+                      - {data.work.ClientAndContact.personList.firstName}
+                    </small>
+                  ) : null}
                   <br />
                 </div>
-                <a href={data.work.ClientAndContact.clientList.webpage}>visit</a>
+                <a href={data.work.ClientAndContact.clientList.webpage}>
+                  visit
+                </a>
               </div>
             </div>
             {data.work.ClientAndContact.clientList.image ? (
@@ -154,8 +186,8 @@ const WorkPage = ({ data, pageContext }) => {
                   width={300}
                   height={Math.round(
                     300 /
-                      data.work.ClientAndContact.clientList.image.image.asset.metadata.dimensions
-                        .aspectRatio
+                      data.work.ClientAndContact.clientList.image.image.asset
+                        .metadata.dimensions.aspectRatio
                   )}
                   alt={data.work.ClientAndContact.clientList.image.image}
                   //config={{blur:50}}
@@ -194,6 +226,13 @@ const WorkPage = ({ data, pageContext }) => {
             <small>{data.work.image.description}</small>
           </div>
         ) : null}
+        <div>
+          {data.quotes.edges.map(el => {
+            return (
+              <p>{`"${el.node.quote}" - ${el.node.person.firstName} ${el.node.person.lastName} ${el.node.person.title}`}</p>
+            )
+          })}
+        </div>
         <div
           style={{
             fontWeight: "bold",
@@ -234,9 +273,9 @@ const WorkPage = ({ data, pageContext }) => {
           )}
         </div>
         <div>
-          {data.work.cloudinaryList.length ? 
-            <ImageGallery props={data.work.cloudinaryList}/>
-           : null }
+          {data.work.cloudinaryList.length ? (
+            <ImageGallery props={data.work.cloudinaryList} />
+          ) : null}
         </div>
       </div>
       <Footer />
