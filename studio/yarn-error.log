@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/lib/node_modules/@sanity/cli/vendor/yarn add @sanity/production-previev --json --non-interactive --ignore-engines --network-timeout 60000 --registry https://registry.npmjs.org
+  /usr/local/bin/node /usr/local/lib/node_modules/@sanity/cli/vendor/yarn add @sanity/production-previewdelete --json --non-interactive --ignore-engines --network-timeout 60000 --registry https://registry.npmjs.org
 
 PATH: 
   /usr/local/lib/node_modules/vendor:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.npmjs.org/@sanity%2fproduction-previev: Not found
+  Error: https://registry.npmjs.org/@sanity%2fproduction-previewdelete: Not found
       at params.callback [as _callback] (/usr/local/lib/node_modules/@sanity/cli/vendor/yarn:78587:18)
       at self.callback (/usr/local/lib/node_modules/@sanity/cli/vendor/yarn:135318:22)
       at Request.emit (node:events:513:28)
@@ -49,6 +49,7 @@ npm manifest:
       "@sanity/default-login": "^2.35.0",
       "@sanity/desk-tool": "^2.35.1",
       "@sanity/eslint-config-studio": "^2.0.1",
+      "@sanity/production-preview": "^2.35.3",
       "@sanity/vision": "^2.35.0",
       "get-youtube-id": "^1.0.1",
       "prop-types": "^15.7",
@@ -1802,6 +1803,11 @@ Lockfile:
       is-hotkey "^0.1.6"
       lodash "^4.17.21"
       slate "0.81.1"
+  
+  "@sanity/production-preview@^2.35.3":
+    version "2.35.3"
+    resolved "https://registry.npmjs.org/@sanity/production-preview/-/production-preview-2.35.3.tgz#87c5b0ade3dffefb5c2929ea58e70c0b702180b7"
+    integrity sha512-z61q7u/kB3jN5kfBzWtTF7gt0rARl68Pet0i4hvjwjscA79XY6JkAl5/3RZu3jiOiaZ6ck03zT7euFfv7bwTRA==
   
   "@sanity/react-hooks@2.35.1":
     version "2.35.1"
